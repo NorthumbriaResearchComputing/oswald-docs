@@ -1,6 +1,7 @@
 site_name: Oswald User Documentation
-repo_url: https://github.com/NU-CEM/HPC_internship_2021 # Change this later
+repo_url: https://github.com/musicmrman99/HPC_Internship_2021 # Change this later
 repo_name: NU-CEM/oswald-docs
+edit_uri: edit/main/docs/
 
 theme:
   name: material
@@ -17,12 +18,14 @@ theme:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: deep purple
+      accent: amber
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: deep purple
+      accent: amber
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
