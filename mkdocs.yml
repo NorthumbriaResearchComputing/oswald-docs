@@ -1,0 +1,35 @@
+site_name: Oswald User Documentation
+repo_url: https://github.com/NU-CEM/HPC_internship_2021 # Change this later
+repo_name: NU-CEM/oswald-docs
+
+theme:
+  name: material
+
+  logo: assets/images/logo.png
+  favicon: assets/images/logo.png
+  icon:
+    repo: fontawesome/brands/github
+
+  features:
+    - navigation.expand
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+markdown_extensions:
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
