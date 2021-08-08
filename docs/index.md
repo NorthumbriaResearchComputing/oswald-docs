@@ -40,14 +40,14 @@ Supercomputers are used in a wide range of fields of research. Oswald is commona
 
 | Num | Type               | CPU                                                        | GPU                                                                 | RAM   | Storage             |
 |-----|--------------------|------------------------------------------------------------|---------------------------------------------------------------------|-------|---------------------|
-| 1   | Head Node          | Dual Intel Xeon E5-2630 v4 10 core 2.2GHz (20 cores total) |                                                                     | 64GB  | 1TB SSD, 185TB HDD  |
-| 32  | Compute Node       | Dual Intel Xeon E5-2680 v4 14 core 2.4GHz (28 cores total) |                                                                     | 64GB  | 120GB SSD           |
+| 1   | Head Node          | Dual Intel Xeon E5-2630 v4 10 Core 2.2GHz (20 cores total) |                                                                     | 64GB  | 1TB SSD, 185TB HDD  |
+| 32  | Compute Node       | Dual Intel Xeon E5-2680 v4 14 Core 2.4GHz (28 cores total) |                                                                     | 64GB  | 120GB SSD           |
 | 1   | GPU Node           | Intel Skylake SKL-SP 4112 4 Core 2.6GHz                    | 2 x NVIDIA Tesla V100 (each with 640 Tensor cores, 5120 CUDA cores) | 64GB  | 240GB SSD           |
-| 1   | Visualisation Node | Dual Intel Xeon E5-2630 v4 2.20GHz CPU (20 cores total)    | NVIDIA Tesla M60 (4096 CUDA Cores)                                  | 256GB | 240GB SSD, 12TB HDD |
+| 1   | Visualisation Node | Dual Intel Xeon E5-2630 v4 10 Core 2.2GHz (20 cores total) | NVIDIA Tesla M60 (4096 CUDA Cores)                                  | 256GB | 240GB SSD, 12TB HDD |
 
 Oswald also has:
 
-- An Intel Omnipath 100Gb Interconnect
-- 88TB of Lustre Parallel storage
+- An Intel Omnipath 100Gb interconnect
+- 88TB of Lustre parallel storage
 - Hyperthreading enabled on all compute nodes, allowing 56 threads to run
-    - Note this does **not** mean a doubling of speed, although some jobs will run faster than just using 28 cores.
+    - *Note*: This does **not** mean a doubling of speed, although some jobs will run faster than just using 28 cores.
