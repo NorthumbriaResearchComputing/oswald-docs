@@ -40,11 +40,12 @@ nav:
   - Quickstart:
     - Accessing Oswald: quickstart/accessing-oswald.md
     - Storage and Filesystems: quickstart/storage-and-filesystems.md
-    - Software Environment and Modules: quickstart/software-environment-and-modules.md
+    - Software Environment and Modules: quickstart/software-environment.md
     - Jobs: quickstart/jobs.md
     - Application Tools: quickstart/application-tools.md
 
-  - Software: software.md
+  - Software:
+    - MPI: software/mpi.md
 
   - Support:
     - University Support: support/university-support.md
