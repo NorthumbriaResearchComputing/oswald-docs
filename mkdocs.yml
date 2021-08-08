@@ -45,6 +45,7 @@ nav:
     - Application Tools: quickstart/application-tools.md
 
   - Software:
+    - Software List: software/software-list.md
     - MPI: software/mpi.md
 
   - Support:
