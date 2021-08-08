@@ -8,7 +8,7 @@ A modules environment provides the means to bundle each software or library pack
 
 ## Using Modules
 
-Managing software in a modules environment is done with the various sub-commands of the '`module`' command.
+Managing software in a modules environment is done with the various sub-commands of the `module` command.
 
 To know what software and libraries are currently in use in your environment after you log in, you can use the `module list` command. This will show something like:
 ```

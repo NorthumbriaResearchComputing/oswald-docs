@@ -13,7 +13,7 @@ Oswald supports both `scp` and `sftp` for transferring files. Clients for these 
     sftp <username>@oswald
     ```
 
-    See '`man scp`' and '`man sftp`' for more information on how to use these programs.
+    See `man scp` and `man sftp` for more information on how to use these programs.
 
 - **Windows**: Various applications exist that support either `scp`, `sftp`, or both. Common applications include:
     - [WinSCP](https://winscp.net/eng/index.php)
