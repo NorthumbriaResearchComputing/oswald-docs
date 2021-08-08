@@ -24,7 +24,7 @@ HPC takes a divide and conquer approach to solve big problems – dividing a pro
 
 Modern supercomputers are usually cluster computers, or just 'clusters' - where multiple (already quite powerful) computers are connected together to form a powerful compute resource. As such, 'cluster' is often used as another term for supercomputer in the context of HPC.
 
-A cluster consists of a head (master) node and several small(er) computers called compute nodes, all connected together with a high speed interconnecting network(1GB/10GB/IB). Software allows the head and compute nodes to communicate over the interconnection network.
+A cluster consists of a head (master) node and several small(er) computers called compute nodes, all connected together with a high speed interconnecting network (1GB/10GB/IB). Software allows the head and compute nodes to communicate over the interconnection network.
 
 The diagram below shows a typical cluster with Gigabit Ethernet interconnect. A resource manager on the head node allocates work to the compute nodes.
 
