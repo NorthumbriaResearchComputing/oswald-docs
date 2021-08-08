@@ -12,7 +12,7 @@ To access the oswald cluster you need to have an account setup by the cluster sy
 
 Like most supercomputers, Oswald allows you to log in using the Secure Shell (SSH). SSH is available for various operating systems:
 
-- **Unix/Linux**: The OpenSSH client is pre-installed on many Linux distributions. If OpenSSH is not installed on your system:
+- **Unix/Linux**: The OpenSSH client is pre-installed on many Linux distributions. If the OpenSSH client is not installed on your system:
     - If using your own machine, you can install it with your distribution's package manager (eg. '`sudo apt install openssh-client`' on Ubuntu-based systems).
     - If using a university machine, log a ticket with the IT Helpline to have it set up on your machine.
 
@@ -21,19 +21,19 @@ Like most supercomputers, Oswald allows you to log in using the Secure Shell (SS
     ssh <username>@oswald
     ```
 
-- **Mac**: The OpenSSH client is pre-installed and set up on most Macs. Log in using:
+- **Mac**: The OpenSSH client is pre-installed on most Macs. Log in using:
     ```
     ssh <username>@oswald
     ```
 
-- **Windows**: Various applications for Windows allow using SSH, including:
-    - [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest)
-    - [MobaXterm](https://mobaxterm.mobatek.net/download.html)
+- **Windows**: Multiple applications for Windows allow using SSH, including:
+    - [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty)
+    - [MobaXterm](https://mobaxterm.mobatek.net)
 
     If none of this software is installed on your machine:
     
     - If using your own machine, you can download and install the application of your choice from the pages linked above.
-    - If using a university machine, log a ticket with the IT Helpline to have it set up on your machine.
+    - If using a university machine, log a ticket with the IT Helpline to have the needed software set up on your machine.
 
     Refer to the documentation for these applications for how to connect using them. The 'server address' you need to connect to is '`oswald`'.
 
