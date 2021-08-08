@@ -1,4 +1,4 @@
-# Files and Filesystems
+# Storage and Filesystems
 
 ## Transferring Files
 
