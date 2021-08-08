@@ -36,3 +36,17 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+
+  - Quickstart:
+    - Accessing Oswald: quickstart/accessing-oswald.md
+    - Storage and Filesystems: quickstart/storage-and-filesystems.md
+    - Software Environment and Modules: quickstart/software-environment-and-modules.md
+    - Jobs: quickstart/jobs.md
+    - Application Tools: quickstart/application-tools.md
+
+  - Software: software.md
+
+  - Support:
+    - University Support: support/university-support.md
+    - FAQs: support/faqs.md
+    - Known Issues: support/known-issues.md
