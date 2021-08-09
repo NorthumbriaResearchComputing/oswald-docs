@@ -2,7 +2,7 @@
 
 ## Getting an Account
 
-To access the oswald cluster you need to have an account set up by the cluster system administrators. Log a ticket with the IT Helpline to request this and you will be provided with a username and password by email (your 'registration email').
+To access the Oswald cluster you need to have an account set up by the cluster system administrators. Log a ticket with the IT Helpline to request this and you will be provided with a username and password by email (your 'registration email').
 
 ## Logging In
 
@@ -36,7 +36,7 @@ Like most supercomputers, Oswald allows you to log in using Secure Shell (SSH). 
     If none of this software is installed on your machine:
     
     - If using your own machine, you can download and install the application of your choice from the pages linked above.
-    - If using a university machine, log a ticket with the IT Helpline to have the needed software set up on your machine.
+    - If using a university machine, log a ticket with the IT Helpline to have the required software set up on your machine.
 
     Refer to the documentation for these applications for how to connect using them. The 'server address' you need to connect to is `oswald`.
 
@@ -48,7 +48,7 @@ The first time you log in, you may also be asked to accept the "host key" of Osw
 
 ### Configuring SSH
 
-When using the above Unix/Linux/Mac commands, having to repeat them every time you wish to log in or [transfer files](/quickstart/storage-and-filesystems) can become tedius. OpenSSH allows using a configuration file (usually located at `~/.ssh/ssh_config`) to save some of the information for future logins.
+When using the above Unix/Linux/Mac commands, having to repeat them every time you wish to log in or [transfer files](/quickstart/storage-and-filesystems) can become tedious. OpenSSH allows using a configuration file (usually located at `~/.ssh/ssh_config`) to save some of the information for future logins.
 
 In that file, you can add the following:
 

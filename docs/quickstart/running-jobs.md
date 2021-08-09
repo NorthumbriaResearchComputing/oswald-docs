@@ -9,7 +9,7 @@ Work on the cluster is submitted as a job to a workload manager which allocates 
     - More than 300MB of RAM
     - More than 5GB of storage
 
-To create a job, a job script must be created and submitted to SLURM. SLURM job scripts may include a range of options to customise their behaviour. Once the job is submitted, it can be monitored and canceled. The rest of this page describes each of these stages in more detail.
+To create a job, a job script must be created and submitted to SLURM. SLURM job scripts may include a range of options to customise their behaviour. Once the job is submitted, it can be monitored and cancelled. The rest of this page describes each of these stages in more detail.
 
 ## Job Scripts
 
@@ -126,10 +126,10 @@ generated during the job execution to leave the node(s) clean for the next job.
 
     The job script above is configured so that when it is submitted, it is submitted to the 24-hour queue (`--partition=24hour`). Then, once suffient resources are available on the cluster, SLURM will run the job over 2 nodes (`--nodes=2`) with 10 tasks per node (`--ntasks=10`), for a total of 20 process slots. The `mpirun` command will run the given application (`hello-mpi`) over the specified number of process slots (`-n 20`). Here, `20` makes it fill all 20 slots the job script requests.
     
-    The job script also specifies that it will run for no more than 30 minutes (`--time=0-00:30:00`), and to notify you (`–-mail-user=your.email.address@here`) when it has started and completed, or failed (`–-mail-type=ALL`). Once it has completed, you will be able to access the output of the program in files whose name is in the format `hello-mpi-<job-id>.out`, eg. `hello-mpi-20220.out`.
+    The job script also specifies that it will run for no more than 30 minutes (`--time=0-00:30:00`), and to notify you (`–-mail-user=your.email.address@here`) when it has started and completed, or failed (`–-mail-type=ALL`). Once it has completed, you will be able to access the output of the job in a file whose name is in the format `hello-mpi-<job-id>.out`, eg. `hello-mpi-20220.out`.
 
 !!! note
-    You should try to **use as many resources as you request** and only **request as many resources as you need** to avoid inefficiency in the job allocation system. Reserving resources you don't need only adds to the time other users have to wait for their jobs to start, as resources (CPU cores, RAM, disk space, etc.) that are reserved by your job but are not being used cannot be used by other jobs for as long as your job is running. [true? extent it is true?]
+    You should try to **use as many resources as you request** and only **request as many resources as you need** to avoid inefficiency in the job allocation system. Reserving resources you don't need only adds to the time other users have to wait for their jobs to start, as resources (CPU cores, RAM, disk space, etc.) that are reserved by your job but are not being used cannot be used by other jobs for as long as your job is running. [true??? extent it is true???]
 
 ### SLURM Directives
 
@@ -189,7 +189,7 @@ them, with different maximum wallclock run times and maximum number of nodes per
 | 24 hour              | 24                  | 24 hours / 1 day      |
 | debug                | 1                   | 1 hour                |
 
-The debug queue is meant to be used as a quick check to see if you code and/or script are configured correctly. It is the default queue if you do not specify another queue using the `-p` or `--partition` #SBATCH directive in your job script, or on the command-line using the `--partition` option, like so:
+The debug queue is meant to be used as a quick check to see if your code and/or script are configured correctly. It is the default queue if you do not specify another queue using the `-p` or `--partition` #SBATCH directive in your job script, or on the command-line using the `--partition` option, like so:
 
 ```
 sbatch --partition=48hour slurm-hello-mpi.sh
@@ -239,7 +239,7 @@ You will be sent an email when your job starts/ends/fails according to the setti
 
 ## Cancelling a Job
 
-You may realise after submitting a job that something is wrong with it, eg. you put it on the wrong queue, set the wrong numberof cores, or otherwise misconfigured parameters, so you need to cancel the job. You can cancel a job using the `scancel` command, giving the job ID of the job you wish to cancel:
+You may realise after submitting a job that something is wrong with it, eg. you put it on the wrong queue, set the wrong number of cores, or otherwise misconfigured parameters, so you need to cancel the job. You can cancel a job using the `scancel` command, giving the job ID of the job you wish to cancel:
 
 ```
 scancel <job-id>

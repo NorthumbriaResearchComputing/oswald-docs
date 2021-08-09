@@ -32,7 +32,7 @@ The diagram below shows a typical cluster with Gigabit Ethernet interconnect. A 
 
 ## What Are Supercomputers Used For?
 
-Supercomputers are used in a wide range of fields of research. Oswald is commonally used in the following fields:
+Supercomputers are used in a wide range of fields of research. Oswald is commonly used in the following fields:
 
 ...
 

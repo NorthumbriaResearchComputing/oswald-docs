@@ -31,9 +31,9 @@ Oswald supports both `scp` and `sftp` for transferring files. Clients for these 
 ## Available Filesystems
 
 - /home
-- /tmp + $TMPDIR ??
-- Lustre (where?)
-- Scratch ??
+- /tmp + $TMPDIR ???
+- Lustre (where???)
+- Scratch ???
 - etc.
 
 Capabilities and policies:
