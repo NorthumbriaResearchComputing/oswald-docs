@@ -32,6 +32,7 @@ theme:
 
 markdown_extensions:
   - admonition
+  - pymdownx.details
   - pymdownx.superfences
   - toc:
       permalink: true
@@ -43,7 +44,7 @@ nav:
     - Accessing Oswald: quickstart/accessing-oswald.md
     - Storage and Filesystems: quickstart/storage-and-filesystems.md
     - Software Environment and Modules: quickstart/software-environment.md
-    - Jobs: quickstart/jobs.md
+    - Running Jobs: quickstart/running-jobs.md
     - Application Tools: quickstart/application-tools.md
 
   - Software:
