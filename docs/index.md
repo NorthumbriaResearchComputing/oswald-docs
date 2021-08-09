@@ -50,4 +50,6 @@ Oswald also has:
 - An Intel Omnipath 100Gb interconnect
 - 88TB of Lustre parallel storage
 - Hyperthreading enabled on all compute nodes, allowing 56 threads to run
-    - *Note*: This does **not** mean a doubling of speed, although some jobs will run faster than just using 28 cores.
+
+!!! note
+    Hyperthreading does **not** mean a doubling of speed, although some jobs will run faster than just using 28 cores.

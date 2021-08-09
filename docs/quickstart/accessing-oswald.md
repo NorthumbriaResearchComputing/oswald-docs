@@ -6,7 +6,8 @@ To access the oswald cluster you need to have an account set up by the cluster s
 
 ## Logging In
 
-*Note*: Throughout the following documentation, replace `<username>` with the username you were given in your registration email.
+!!! note
+    Throughout the following documentation, replace `<username>` with the username you were given in your registration email.
 
 ### SSH Clients
 
@@ -65,4 +66,5 @@ scp <file-name> oswald:<destination-directory>
 sftp oswald
 ```
 
-*Note*: The configuration file is per-user on your machine - other users will not see your Oswald username unless you share the file.
+!!! note
+    The configuration file is per-user on your machine - other users will not see your Oswald username unless you share the file.
