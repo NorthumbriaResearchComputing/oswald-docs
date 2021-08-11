@@ -45,11 +45,13 @@ nav:
     - Storage and Filesystems: quickstart/storage-and-filesystems.md
     - Software Environment and Modules: quickstart/software-environment.md
     - Running Jobs: quickstart/running-jobs.md
-    - Application Tools: quickstart/application-tools.md
+    - Application Development Tools: quickstart/application-development-tools.md
 
   - Software:
     - Software List: software/software-list.md
     - MPI: software/mpi.md
+    - GNU Compilers: software/gnu-compilers.md
+    - Intel Compilers: software/intel-compilers.md
 
   - Support:
     - University Support: support/university-support.md
