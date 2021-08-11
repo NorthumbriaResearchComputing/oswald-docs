@@ -2,14 +2,16 @@
 
 Work on the cluster is submitted as a job to a workload manager which allocates the job to one or more compute nodes, depending on the requested and available resources. Jobs are held in a job queue until sufficient resources are available on the cluster to run the job. Several workload managers exist for different supercomputers, such as PBSPro, Torque, SGE, and SLURM. Oswald uses the SLURM ('Simple Linux Utility for Resource Management') workload manager.
 
-!!! note
-    While it is possible to perform work directly on the head node, *only* quick and non-resource-intensive tests are acceptable to run on the head node. As a guide, a job should never be run on the head node if it takes either:
+!!! warning
+    While it is possible to perform work directly on the head node, *only* quick and non-resource-intensive tests are acceptable to run on the head node. As a guide, a job should *never* be run on the head node if it takes either:
 
     - Longer than 1 minute
     - More than 300MB of RAM
     - More than 5GB of storage
 
-To create a job, a job script must be created and submitted to SLURM. SLURM job scripts may include a range of options to customise their behaviour. Once the job is submitted, it can be monitored and cancelled. The rest of this page describes each of these stages in more detail.
+    Even for test jobs that are within these bounds, consider running them on the cluster's `debug` queue. See [Job Queues/Partitions and Limits](#job-queuespartitions-and-limits) for details.
+
+To create a job, a job script must be created and submitted to SLURM. SLURM job scripts may include a range of options to customise their behaviour [are any mandatory???]. Once the job is submitted, it can be monitored and cancelled. The rest of this page describes each of these stages in more detail.
 
 ## Job Scripts
 
@@ -18,10 +20,10 @@ A job script is a shell script in which you specify the command(s) to run when t
 A job script has the following basic structure:
 
 1. **Shebang Line**: A single line that specifies the shell to use (often `#!/bin/sh` or `#!/bin/bash`).
-2. **SLURM Directives**: Optional lines that SLURM uses to set properties about the job, such as the number of nodes to use, the number of processor cores to use, memory requirements, etc. These can either have a 'long' format: `#SBATCH <--option>=<parameter>`, or a short format: `#SBATCH <-o> <parameter>`. In either case, leave no space between the `#` and `SBATCH`, otherwise the directive will be treated as a comment and ignored. Many common options and what they do are listed [below](#slurm-directives).
+2. **SLURM Directives**: Optional lines that SLURM uses to set properties about the job, such as the number of nodes to use, the number of processor cores to use, memory requirements, etc. These can either have a 'long' format: `#SBATCH --<option>=<parameter>`, or a short format: `#SBATCH -<o> <parameter>` (where `<o>` is the option's single-character name). In either case, leave no space between the `#` and `SBATCH`, otherwise the directive will be treated as a comment and ignored. Many common options and what they do are listed [below](#slurm-directives).
 3. **Setup**: Optional shell commands to load required modules and define
 application-specific environment variables.
-4. **Application Execution**: The shell command(s) to execute the application.
+4. **Application Execution**: The shell command(s) to execute the application. This could include running software you have downloaded to assist in your research, an application you have written yourself, a script that uses pre-installed packages, or a combination of these.
 5. **Garbage Collection**: The shell commands to clean up any temporary workfiles
 generated during the job execution to leave the node(s) clean for the next job.
 
@@ -147,10 +149,10 @@ The following is a list of common directives.
 | `#SBATCH --time=<walltime>`<br> `#SBATCH -t <walltime>`                | Request the maximum amount of time the task will take to run. (what happens if it's not finished???) |
 | `#SBATCH --begin=<time>`                                               | Request the job to start at a specific time.                                                         |
 | `#SBATCH --workdir=<directory-path>`<br> `#SBATCH -D <directory-path>` | Set the working directory to run the script in.                                                      |
-| `#SBATCH --error=<filename.log>`<br> `#SBATCH -e <filename.log>`       | Set the error log file name.                                                                         |
-| `#SBATCH --output=<filename.log>`<br> `#SBATCH -o <filename.log>`      | Set the output log file name.                                                                        |
-| `#SBATCH --mail-user=<user@address>`                                   | Set the email address for job notifications.                                                         |
-| `#SBATCH --mail-type=<BEGIN, END, FAIL, ALL>`                          | Set the type(s) of job notification to send.                                                         |
+| `#SBATCH --error=<filename.log>`<br> `#SBATCH -e <filename.log>`       | Set the error log file name. This can be a relative path from your current directory.                |
+| `#SBATCH --output=<filename.log>`<br> `#SBATCH -o <filename.log>`      | Set the output log file name. This can be a relative path from your current directory.               |
+| `#SBATCH --mail-user=<user@address>`                                   | Set the email address for job notifications - use your email address.                                |
+| `#SBATCH --mail-type=<BEGIN, END, FAIL, ALL>`                          | Set the type(s) of job notification to send - one of `BEGIN`, `END`, `FAIL`, or `ALL`.               |
 
 ## Submitting a Job
 
@@ -178,8 +180,7 @@ Where `XXXXX` is the job number assigned to your submitted job - you can use thi
 
 ## Job Queues/Partitions and Limits
 
-Oswald has several job queues, or 'partitions' as SLURM refers to
-them, with different maximum wallclock run times and maximum number of nodes per job, as in the table below:
+Oswald has several job queues, or 'partitions' as SLURM refers to them, with different maximum 'wallclock' (actual/real) run times and maximum number of nodes per job, as in the table below:
 
 | Queue/Partition Name | Max Number of Nodes | Max Wallclock Runtime |
 |----------------------|---------------------|-----------------------|
@@ -237,27 +238,9 @@ You will be sent an email when your job starts/ends/fails according to the setti
 ??? example
     In the 'Hello World' example, the emails will be sent almost simultaneously, as the job completes almost instantly (it is only making a file containing "Hello World from node X rank Y out of Z" 20 times, after all!).
 
-## Cancelling a Job
-
-You may realise after submitting a job that something is wrong with it, eg. you put it on the wrong queue, set the wrong number of cores, or otherwise misconfigured parameters, so you need to cancel the job. You can cancel a job using the `scancel` command, giving the job ID of the job you wish to cancel:
-
-```
-scancel <job-id>
-```
-
-??? example
-    If we wanted to cancel the 'Hello World' job with ID 20220, we would run:
-
-    ```
-    scancel 20220
-    ```
-
-!!! note
-    You can only cancel your own jobs. System administrators can cancel any job.
-
 ## Job Output
 
-When the job has finished the job details will disappear from the queue (and output of `squeue`) and you can then examine the output file produced (if one is produced by your job).
+When the job has finished the job details will disappear from the queue (and output of `squeue`) and you can then examine the output file produced (if one is produced by your job). The file will be named whatever you specified in the `#SBATCH --output <filename.log>` directive, and will be located in your current directory. If you have logged out and logged back in since submitting the job, the file will be located in whichever directory was your current directory at the time you submitted the job with `sbatch`.
 
 ??? example
     The output file for the 'Hello World' job is `hello-mpi-20220.out`. As we expect it to be short, we can inspect it with the `cat` command:
@@ -287,7 +270,25 @@ When the job has finished the job details will disappear from the queue (and out
     ```
 
     !!! note
-        As this is an MPI application, the output above is added to by each of the processes/tasks running on the requested nodes independently of one another (ie. no process/task depends on the output of any other process/task). As such, the output of this job may not be in sequential order - the messages appear in the order in which the processes/tasks run and terminate (which will appear relatively arbitrary after a job has started).
+        As this is an MPI application, the output above is added to by each of the processes/tasks running on the requested nodes independently of one another (ie. no process/task depends on the output of any other process/task). As such, the output of this job probably won't be in sequential order - the messages appear in the order in which the processes/tasks run and print the text (which will appear to be almost arbitrary after the job has started).
+
+## Cancelling a Job
+
+You may realise after submitting a job that something is wrong with it, eg. you put it on the wrong queue, set the wrong number of cores, or otherwise misconfigured parameters, so you need to cancel the job. You can cancel a job using the `scancel` command, giving the job ID of the job you wish to cancel:
+
+```
+scancel <job-id>
+```
+
+??? example
+    If we wanted to cancel the 'Hello World' job with ID 20220, we would run:
+
+    ```
+    scancel 20220
+    ```
+
+!!! note
+    You can only cancel your own jobs. System administrators can cancel any job.
 
 ## More Information
 

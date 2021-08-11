@@ -68,3 +68,7 @@ sftp oswald
 
 !!! note
     The configuration file is per-user on your machine - other users will not see your Oswald username unless you share the file.
+
+## Logging out
+
+During an SSH session, you can log out using the `exit` command, or by closing the connection in any other way.

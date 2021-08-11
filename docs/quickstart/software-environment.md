@@ -2,26 +2,26 @@
 
 Most of the software you will use on Oswald is installed in what is called a “Modules Environment”.
 
-On a traditional Unix/Linux system, software and libraries added by users are installed in globally-available directories (such as `/bin`, `/sbin`, `/usr/bin`, `/usr/local/bin`, `/lib`, and `/usr/lib`) alongside operating system software and libraries. This makes it difficult to separate user and system software and install multiple different versions of the same software or library at the same time.
+On a traditional Unix/Linux system, software and libraries added by users are installed alongside operating system software and libraries in standard directories (such as `/bin`, `/sbin`, `/usr/bin`, `/usr/local/bin`, `/lib`, and `/usr/lib`). This makes it difficult to separate user and system software and install multiple different versions of the same software or library at the same time.
 
-A modules environment provides the means to bundle each software or library package into a self contained module which:
+A modules environment provides the means to bundle each software or library package into a self contained module so that:
 
-- Keeps user and system software and libraries separate
-- Allows different versions of the same software or library to be installed
-- Allows a user to configure their environment the way they need it
+- System software and libraries are kept separate
+- Different versions of the same software or library can be installed
+- Each user can configure their environment the way they need it
 
 ## Using Modules
 
 Managing software in a modules environment is done with the various sub-commands of the `module` command.
 
-To know what software and libraries are currently in use in your environment after you log in, you can use the `module list` command. This will show something like:
+To know what software and libraries are currently in use in your environment, you can use the `module list` command. This will show something like:
 ```
 $ module list
 Currently Loaded Modulefiles:
  1) gcc/5.2.0   2) slurm/15.08.6
 ```
 
-To use a particular piece of software or library, you must load the module associated with that software into your environment. This is done with `module load <module_name>`, replacing `<module_name>` with the name of the module associated with the software you want to use. A list of module names and the software they contain can be found on the [Software List](/software/software-list) page.
+To use a particular piece of software or library, you must load the module for that software into your environment. This is done with `module load <module_name>`, replacing `<module_name>` with the name of the module for the software you want to use. A list of module names and the software they contain can be found on the [Software List](/software/software-list) page.
 
 As an example, lets say you want to use version 16.0.4 of the Intel compilers. You can load the Intel compiler module using the `load` sub-command and then list the loaded modules:
 
@@ -36,7 +36,7 @@ Currently Loaded Modulefiles:
 
 Now you can use the Intel Compilers, e.g. `ifort`, `icc`, `icpc`.
 
-When you have finished using a module you can remove it from your environment using the `unload` sub-command. Continuing on from the previous example, to unload the Intel compiler module:
+When you have finished using a module, you can remove it from your environment using `module unload <module-name>`. This command is mainly useful if you want to use a different version of a piece of software or library, in which case you must unload the version you are currently using before loading the other version [true???]. All modules will automatically be unloaded when you log out. Continuing on from the previous example, to unload the Intel compiler module:
 
 ```
 $ module unload intel/compiler/64/16.0.4/2016.4.258
@@ -45,7 +45,7 @@ Currently Loaded Modulefiles:
  1) gcc/5.2.0   2) slurm/15.08.6
 ```
 
-You can remove all modules from your environment using the `purge` sub-command. Use this with care, as this removes *everything* from your modules environment! For example:
+You can remove all modules from your environment using `module purge`. Use this with care, as this removes *everything* from your modules environment! For example:
 
 ```
 $ module purge

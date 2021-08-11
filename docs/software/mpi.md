@@ -15,4 +15,4 @@ There are 4 MPI-2 implementations available on Oswald:
 These libraries can be compiled with GCC, Open64, and Intel compilers.
 
 !!! warning "Important Note"
-    As Oswald uses an OmniPath (OPA) interconnect (100Gb/s) you should *only* use the Host Fabric Interface-compatible (HFI) libraries (those with the `-hfi` suffix, which have been compiled and optimised to use OmniPath) by loading the appropriate module. The other libraries will default to communicate over the management network which is much slower (1Gb/s) and can cause cluster instability.
+    As Oswald uses an OmniPath (OPA) interconnect (100Gb/s) you should *only* use the Host Fabric Interface-compatible (HFI) libraries (those with the `-hfi` suffix), by loading the appropriate module. These have been compiled and optimised to use OmniPath. The other libraries will default to communicate over the management network which is much slower (1Gb/s) and can cause cluster instability.

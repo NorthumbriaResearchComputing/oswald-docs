@@ -28,6 +28,8 @@ Oswald supports both `scp` and `sftp` for transferring files. Clients for these 
     - If using your own machine, you can download and install the application of your choice from the pages linked above.
     - If using a university machine, log a ticket with the IT Helpline to have the needed software set up on your machine.
 
+    Refer to the documentation for these applications for how to use them to transfer files. The 'server address' you need to connect to is `oswald`.
+
 ## Available Filesystems
 
 - /home
