@@ -1,7 +1,8 @@
 name: mkdocs
 channels:
-  - defaults
   - conda-forge
+  - defaults
 dependencies:
   - mkdocs
   - mkdocs-material
+

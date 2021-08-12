@@ -19,5 +19,5 @@ mkdocs serve # does `mkdocs build` for you
 If you add or change any dependencies, you will need to re-export the conda environment's dependencies with (in the root of the repo):
 
 ```
-conda env export --from-history
+conda env export --from-history | grep -v prefix: > environment.yml
 ```
