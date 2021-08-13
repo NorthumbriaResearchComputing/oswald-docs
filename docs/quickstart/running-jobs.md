@@ -284,7 +284,7 @@ When the job has finished the job details will disappear from the queue (and out
     ```
 
     !!! note
-        As this is an MPI application, the output above is added to by each of the processes/tasks running on the requested nodes independently of one another (ie. no process/task depends on the output of any other process/task). As such, the output of this job probably won't be in sequential order - the messages appear in the order in which the processes/tasks run and print the text (which will appear to be almost arbitrary after the job has started).
+        As this is an MPI application, the output file is added to by each of the processes/tasks running on the requested nodes independently of one another (i.e. no process/task depends on the output of any other process/task). As such, the output of this job probably won't be in sequential order - the messages appear in the order in which the processes/tasks run and print the text (which will appear to be almost arbitrary after the job has started).
 
 ## Cancelling a Job
 
