@@ -11,7 +11,7 @@ Work on the cluster is submitted as a job to a workload manager which allocates 
 
     Even for test jobs that are within these bounds, consider running them on the cluster's `debug` queue. See [Job Queues/Partitions and Limits](#job-queuespartitions-and-limits) for details.
 
-To create a job, a job script must be created and submitted to SLURM. SLURM job scripts may include a range of options to customise their behaviour [are any mandatory???]. Once the job is submitted, it can be monitored and cancelled. The rest of this page describes each of these stages in more detail.
+To create a job, a job script must be created and submitted to SLURM. SLURM job scripts may include a range of options to customise their behaviour. Once the job is submitted, it can be monitored and cancelled. The rest of this page describes each of these stages in more detail.
 
 ## Job Scripts
 
@@ -140,19 +140,33 @@ The following is a list of common directives.
 !!! note
     Lists of possible values for directives given here may not be comprehensive. A full list of all directives and possible parameter values can be seen by running `sbatch -help`, or running `sbatch -usage` for a more concise list.
 
-| Option (short and long format)                                         | Description                                                                                          |
-|------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-| `#SBATCH --jobname=<jobname>`<br> `#SBATCH -J <jobname>`               | Set the name of the job.                                                                             |
-| `#SBATCH --partition=<partition>`<br> `#SBATCH -p <partition>`         | Run the job in the specified partition/queue.                                                        |
-| `#SBATCH --nodes=<num-nodes>`<br> `#SBATCH -N <num-nodes>`             | Request the required number of nodes.                                                                |
-| `#SBATCH --ntasks=<num-tasks>`<br> `#SBATCH -n <num-tasks>`            | Request the required number of tasks per node.                                                       |
-| `#SBATCH --time=<walltime>`<br> `#SBATCH -t <walltime>`                | Request the maximum amount of time the task will take to run. (what happens if it's not finished???) |
-| `#SBATCH --begin=<time>`                                               | Request the job to start at a specific time.                                                         |
-| `#SBATCH --workdir=<directory-path>`<br> `#SBATCH -D <directory-path>` | Set the working directory to run the script in.                                                      |
-| `#SBATCH --error=<filename.log>`<br> `#SBATCH -e <filename.log>`       | Set the error log file name. This can be a relative path from your current directory.                |
-| `#SBATCH --output=<filename.log>`<br> `#SBATCH -o <filename.log>`      | Set the output log file name. This can be a relative path from your current directory.               |
-| `#SBATCH --mail-user=<user@address>`                                   | Set the email address for job notifications - use your email address.                                |
-| `#SBATCH --mail-type=<BEGIN, END, FAIL, ALL>`                          | Set the type(s) of job notification to send - one of `BEGIN`, `END`, `FAIL`, or `ALL`.               |
+| Option (short and long format)                                        | Description and Default Value                                                                                                                                                                            |
+|-----------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `#SBATCH --jobname=<jobname>`<br>`#SBATCH -J <jobname>`               | Set the name of the job.<br>*Default*: The name of the job script.                                                                                                                                       |
+| `#SBATCH --partition=<partition>`<br>`#SBATCH -p <partition>`         | Run the job in the specified partition/queue.<br>*Default*: `debug` (for Oswald). [1]                                                                                                                    |
+| `#SBATCH --nodes=<num-nodes>`<br>`#SBATCH -N <num-nodes>`             | Request the required number of nodes.<br>*Default*: As many nodes as needed to provide for the number of tasks.                                                                                          |
+| `#SBATCH --ntasks=<num-tasks>`<br>`#SBATCH -n <num-tasks>`            | Request the required number of tasks (usually equivalent to CPU cores) per node.<br>*Default*: 1 task per node (so 1 task in total if `--nodes` is also not provided in the job script).                 |
+| `#SBATCH --time=<time>` [2]<br>`#SBATCH -t <time>`                    | Request the maximum amount of time the task will take to run. This can be no more than the maximum time limit of the partition used. [3]<br>*Default*: The maximum time limit of the partition used. [1] |
+| `#SBATCH --begin=<time>` [2]                                          | Request the job to start at a specific time.<br>*Default*: As soon as the necessary resources become available.                                                                                          |
+| `#SBATCH --workdir=<directory-path>`<br>`#SBATCH -D <directory-path>` | Set the working directory to run the script in.<br>*Default*: The working directory of the shell that ran `sbatch` to submit the job.                                                                    |
+| `#SBATCH --error=<filename>`<br>`#SBATCH -e <filename>`               | Set the error log file name. This can be a relative path from your current directory.<br>*Default*: `slurm-<jobID>.out`                                                                                  |
+| `#SBATCH --output=<filename>`<br>`#SBATCH -o <filename>`              | Set the output log file name. This can be a relative path from your current directory.<br>*Default*: `slurm-<jobID>.out`                                                                                 |
+| `#SBATCH --mail-user=<user@address>`                                  | Set the email address for job notifications - use your email address.<br>*Default*: Do not notify.                                                                                                       |
+| `#SBATCH --mail-type=<BEGIN, END, FAIL, ALL>`                         | Set the type(s) of job notification to send - usually one of `BEGIN`, `END`, `FAIL`, or `ALL`.<br>*Default*: Do not notify.                                                                              |
+
+Notes:
+
+1. See [Job Queues/Partitions and Limits](#job-queuespartitions-and-limits).
+2. Usually given in the format `hours:minutes:seconds` or `days-hours:minutes:seconds`.
+3. If the requested time limit exceeds the partition's time limit, the job will be left in a PENDING state (possibly indefinitely), meaning the job will not run.
+
+It is recommended that in every job script you at least specify the following:
+
+- Job name
+- Partition
+- Number of nodes
+- Number of tasks
+- Maximum runtime
 
 ## Submitting a Job
 
@@ -188,7 +202,7 @@ Oswald has several job queues, or 'partitions' as SLURM refers to them, with dif
 | 72 hour              | 4                   | 72 hours / 3 days     |
 | 48 hour              | 8                   | 48 hours / 2 days     |
 | 24 hour              | 24                  | 24 hours / 1 day      |
-| debug                | 1                   | 1 hour                |
+| debug                | 1                   | 1 hour [minute???]    |
 
 The debug queue is meant to be used as a quick check to see if your code and/or script are configured correctly. It is the default queue if you do not specify another queue using the `-p` or `--partition` #SBATCH directive in your job script, or on the command-line using the `--partition` option, like so:
 
