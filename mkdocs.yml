@@ -3,6 +3,11 @@ repo_url: https://github.com/musicmrman99/HPC_Internship_2021 # Change this late
 repo_name: NU-CEM/oswald-docs
 edit_uri: edit/main/docs/
 
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+
 theme:
   name: material
 
