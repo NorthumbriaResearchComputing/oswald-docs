@@ -4,10 +4,10 @@
 
 To access the Oswald cluster you need to have an account set up by the cluster system administrators. Log a ticket with the IT Helpline to request this and you will be provided with a username and password by email (your 'registration email').
 
-## Logging In
-
 !!! note
     Throughout the following documentation, replace `<username>` with the username you were given in your registration email.
+
+## Logging In
 
 ### SSH Clients
 
@@ -48,7 +48,7 @@ The first time you log in, you may also be asked to accept the "host key" of Osw
 
 ### Configuring SSH
 
-When using the above Unix/Linux/Mac commands, having to repeat them every time you wish to log in or [transfer files](storage-and-filesystems.md) can become tedious. OpenSSH allows using a configuration file (usually located at `~/.ssh/ssh_config`) to save some of the information for future logins.
+When using the above Unix/Linux/Mac commands, having to repeat them every time you wish to log in or [transfer files](storage-and-filesystems.md) can become tedious. OpenSSH allows using a configuration file (usually located at `~/.ssh/config`) to save some of the information for future logins.
 
 In that file, you can add the following:
 
@@ -58,7 +58,7 @@ Host oswald
   User <username>
 ```
 
-After that, you can provide the server address (which usually looks like `<username>@oswald` as simply `oswald`), such as in:
+After that, you can provide the server address (which usually looks like `<username>@oswald`) as simply `oswald`, such as in:
 
 ```
 ssh oswald
