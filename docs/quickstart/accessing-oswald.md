@@ -48,7 +48,7 @@ The first time you log in, you may also be asked to accept the "host key" of Osw
 
 ### Configuring SSH
 
-When using the above Unix/Linux/Mac commands, having to repeat them every time you wish to log in or [transfer files](/quickstart/storage-and-filesystems) can become tedious. OpenSSH allows using a configuration file (usually located at `~/.ssh/ssh_config`) to save some of the information for future logins.
+When using the above Unix/Linux/Mac commands, having to repeat them every time you wish to log in or [transfer files](../storage-and-filesystems) can become tedious. OpenSSH allows using a configuration file (usually located at `~/.ssh/ssh_config`) to save some of the information for future logins.
 
 In that file, you can add the following:
 

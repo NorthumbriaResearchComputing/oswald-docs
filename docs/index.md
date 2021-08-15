@@ -18,7 +18,7 @@ HPC has two main advantages:
 
 HPC takes a divide and conquer approach to solve big problems – dividing a problem into parts, assigning to workers, and then combining the results as illustrated below.
 
-![divide and conquer approach in HPC](/assets/images/dac-hpc-illustration.png)
+![divide and conquer approach in HPC](assets/images/dac-hpc-illustration.png)
 
 ### Clusters
 
@@ -28,7 +28,7 @@ A cluster consists of a head (master) node and several small(er) computers calle
 
 The diagram below shows a typical cluster with Gigabit Ethernet interconnect. A resource manager on the head node allocates work to the compute nodes.
 
-![HPC cluster diagram](/assets/images/hpc-cluster.png)
+![HPC cluster diagram](assets/images/hpc-cluster.png)
 
 ## What Are Supercomputers Used For?
 

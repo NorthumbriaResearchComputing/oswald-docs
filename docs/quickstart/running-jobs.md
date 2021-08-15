@@ -74,7 +74,7 @@ generated during the job execution to leave the node(s) clean for the next job.
     ```
 
     !!! note
-        We need to load the module with the `-hfi` suffix to use the OmniPath Interconnect. See [MPI](/software/mpi) for details.
+        We need to load the module with the `-hfi` suffix to use the OmniPath Interconnect. See [MPI](../../software/mpi) for details.
 
     Next, compile the source code using the GNU MPI C compiler (`mpicc`):
 

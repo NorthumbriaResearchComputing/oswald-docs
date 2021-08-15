@@ -1,3 +1,3 @@
 # Software List
 
-- [MPI](mpi.md)
+- [MPI](../mpi)

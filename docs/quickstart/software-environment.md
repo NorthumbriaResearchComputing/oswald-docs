@@ -21,7 +21,7 @@ Currently Loaded Modulefiles:
  1) gcc/5.2.0   2) slurm/15.08.6
 ```
 
-To use a particular piece of software or library, you must load the module for that software into your environment. This is done with `module load <module_name>`, replacing `<module_name>` with the name of the module for the software you want to use. A list of module names and the software they contain can be found on the [Software List](/software/software-list) page.
+To use a particular piece of software or library, you must load the module for that software into your environment. This is done with `module load <module_name>`, replacing `<module_name>` with the name of the module for the software you want to use. A list of module names and the software they contain can be found on the [Software List](../../software/software-list) page.
 
 As an example, lets say you want to use version 16.0.4 of the Intel compilers. You can load the Intel compiler module using the `load` sub-command and then list the loaded modules:
 
@@ -80,4 +80,4 @@ Initial Modules:
 
 ## Oswald-Specific Software Information
 
-The [Software List](/software/software-list) page contains a list of pages containing general information about the software and libraries that are commonly used on Oswald (eg. MPI). These pages also contain **specific information about using the software on Oswald**. It is recommended to check the pages on the software you want to use before you start using it on Oswald.
+The [Software List](../../software/software-list) page contains a list of pages containing general information about the software and libraries that are commonly used on Oswald (eg. MPI). These pages also contain **specific information about using the software on Oswald**. It is recommended to check the pages on the software you want to use before you start using it on Oswald.
