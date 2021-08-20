@@ -1,4 +1,7 @@
-site_name: Oswald User Documentation
+site_name: Oswald User Documentation and Newsletter
+site_description: Documentation and newsletter for Northumbria University's Oswald HPC cluster (supercomputer)
+
+site_url: https://nu-cem.github.io/HPC_internship_2021 # Needed for rss-plugin
 repo_url: https://github.com/musicmrman99/HPC_Internship_2021 # Change this later
 repo_name: NU-CEM/oswald-docs
 edit_uri: edit/main/docs/
@@ -7,10 +10,15 @@ plugins:
   - search
   - git-revision-date-localized:
       enable_creation_date: true
+  - rss:
+      image: https://nu-cem.github.io/HPC_internship_2021/assets/images/logo.png
+      match_path: "newsletter/.*"
+      pretty_print: true
 
 theme:
   name: material
 
+  locale: en
   logo: assets/images/logo.png
   favicon: assets/images/logo.png
   icon:
