@@ -11,6 +11,7 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
   - rss:
+      abstract_chars_count: 10000 # Probably the whole newsletter, but truncate if quite long
       image: https://nu-cem.github.io/HPC_internship_2021/assets/images/logo.png
       match_path: "newsletter/.*"
       pretty_print: true
