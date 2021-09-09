@@ -3,13 +3,9 @@
 Work on the cluster is submitted as a job to a workload manager which allocates the job to one or more compute nodes, depending on the requested and available resources. Jobs are held in a job queue until sufficient resources are available on the cluster to run the job. Several workload managers exist for different supercomputers, such as PBSPro, Torque, SGE, and SLURM. Oswald uses the SLURM ('Simple Linux Utility for Resource Management') workload manager.
 
 !!! warning
-    While it is possible to perform work directly on the head node, *only* quick and non-resource-intensive tests are acceptable to run on the head node. As a guide, a job should *never* be run on the head node if it takes either:
-
-    - Longer than 1 minute
-    - More than 300MB of RAM
-    - More than 5GB of storage
-
-    Even for test jobs that are within these bounds, consider running them on the cluster's `debug` queue. See [Job Queues/Partitions and Limits](#job-queuespartitions-and-limits) for details.
+    Working on the head node is only permitted for setting up job scripts, submitting jobs, and editing and compiling source code. Though technically possible, applications (whether pre-installed on Oswald, aquired from an external source, or written/compiled yourself) should **never** be run on the head node, even for testing. If you need to test your application or job, you should run it on the cluster's `debug` queue. See [Job Queues/Partitions and Limits](#job-queuespartitions-and-limits) for details.
+    
+    GUI applications also cannot be run on the head node, even for the above purposes. Using graphical editors for writing code or jobscripts, or creating data, must either be done on your own machine (and the files copied onto oswald), or on the visualisation node [how???]. For visualising your data/results, or other uses of GUI applications, you should use the visualisation node. [how??? not by using SLURM (`--gpu*` options) ...]
 
 To create a job, a job script must be created and submitted to SLURM. SLURM job scripts may include a range of options to customise their behaviour. Once the job is submitted, it can be monitored and cancelled. The rest of this page describes each of these stages in more detail.
 
@@ -131,7 +127,9 @@ generated during the job execution to leave the node(s) clean for the next job.
     The job script also specifies that it will run for no more than 30 minutes (`--time=0-00:30:00`), and to notify you (`--mail-user=your.email.address@here`) when it has started and completed, or failed (`--mail-type=ALL`). Once it has completed, you will be able to access the output of the job in a file whose name is in the format `hello-mpi-<jobID>.out`, eg. `hello-mpi-20220.out`.
 
 !!! note
-    You should try to **use as many resources as you request** and only **request as many resources as you need** to avoid inefficiency in the job allocation system. Reserving resources you don't need only adds to the time other users have to wait for their jobs to start, as resources (CPU cores, RAM, disk space, etc.) that are reserved by your job but are not being used cannot be used by other jobs for as long as your job is running. [true??? extent it is true???]
+    You should try to **use as many resources as you request** and only **request as many resources as you need** to avoid inefficiency in the job allocation system. Reserving resources you don't need only adds to the time other users have to wait for their jobs to start, as resources (CPU cores, RAM, disk space, etc. [???]) that are reserved by your job but are not being used cannot be used by other jobs for as long as your job is running.
+    
+    Nodes are shared by default ('oversubscribed' in SLURM terminology), meaning different jobs can use separate CPU cores, RAM, disk space, etc. *on the same node at the same time*. This can be overridden by using the `--exclusive` option to SBATCH in a job script, or in the `sbatch` command. This should only be used if the application the job is running requires it, as it is otherwise requesting more resources than you need.
 
 ### SLURM Directives
 
@@ -172,12 +170,12 @@ Oswald has several job queues, or 'partitions' as SLURM refers to them, with dif
 | 72 hour              | 4                   | 72 hours / 3 days     |
 | 48 hour              | 8                   | 48 hours / 2 days     |
 | 24 hour              | 24                  | 24 hours / 1 day      |
-| debug                | 1                   | 1 hour [minute???]    |
+| debug                | 1                   | 1 hour                |
 
 When writing job scripts, you should specify to use the job queue with the shortest maximum wallclock time that is more than your job's maximum time. Similarly to setting appropriate resource limits (as mentioned above), this helps to avoid inefficiency in the job allocation system. When specifying the job queue to use using `#SBATCH --partition`, do not put spaces in the queue name (eg. use `24hour`, not `24 hour`).
 
 ??? example
-    If you had a job that you know won't run for more than 60 hours (eg. it previously ran for 52:35:23) and only requires 3 nodes (eg. it requires 80 tasks/cores), then in your job script you would specify (at least) something like:
+    If you had a job that you know won't run for more than 60 hours (eg. it previously ran for 52:35:23) and only requires 3 nodes (eg. it requires 80 tasks/cores), then in your job script you could specify (as a minimum) something like:
 
     ```
     #!/bin/bash

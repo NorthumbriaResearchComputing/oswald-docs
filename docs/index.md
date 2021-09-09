@@ -32,16 +32,21 @@ The diagram below shows a typical cluster with Gigabit Ethernet interconnect. A 
 
 ## What Are Supercomputers Used For?
 
-Supercomputers are used in a wide range of fields of research. Oswald is commonly used in the following fields:
+Supercomputers are used in a wide range of fields of research. Oswald is commonly used in the following research areas:
 
-...
+- Solar Physics simulation and analysis
+- Climate modelling
+- Ice sheet and glacier modelling
+- Physics analysis and simulations
+- Mechanical Engineering modelling using CFD
+- AI and Deep Learning
 
 ## Oswald Hardware Specifications
 
 | Num | Type               | CPU                                                        | GPU                                                                 | RAM   | Storage             |
 |-----|--------------------|------------------------------------------------------------|---------------------------------------------------------------------|-------|---------------------|
 | 1   | Head Node          | Dual Intel Xeon E5-2630 v4 10 Core 2.2GHz (20 cores total) |                                                                     | 64GB  | 1TB SSD, 185TB HDD  |
-| 32  | Compute Node       | Dual Intel Xeon E5-2680 v4 14 Core 2.4GHz (28 cores total) |                                                                     | 64GB  | 120GB SSD           |
+| 32  | Compute Node       | Dual Intel Xeon E5-2680 v4 14 Core 2.4GHz (28 cores total) |                                                                     | 64GB  | 120GB SSD ???       |
 | 1   | GPU Node           | Intel Skylake SKL-SP 4112 4 Core 2.6GHz                    | 2 x NVIDIA Tesla V100 (each with 640 Tensor cores, 5120 CUDA cores) | 64GB  | 240GB SSD           |
 | 1   | Visualisation Node | Dual Intel Xeon E5-2630 v4 10 Core 2.2GHz (20 cores total) | NVIDIA Tesla M60 (4096 CUDA Cores)                                  | 256GB | 240GB SSD, 12TB HDD |
 
