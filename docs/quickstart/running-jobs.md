@@ -129,7 +129,7 @@ generated during the job execution to leave the node(s) clean for the next job.
 !!! note
     You should try to **use as many resources as you request** and only **request as many resources as you need** to avoid inefficiency in the job allocation system. Reserving resources you don't need only adds to the time other users have to wait for their jobs to start, as resources (CPU cores, RAM) that are reserved by your job but are not being used cannot be used by other jobs for as long as your job is running. It is rare that jobs will need to specify a RAM usage limit, but it is possible.
     
-    Nodes are shared by default ('oversubscribed' in SLURM terminology), meaning different jobs can use separate reservable resources (CPU cores, sometimes RAM) *on the same node at the same time*. This can be overridden by using the `--exclusive` option to SBATCH in a job script, or in the `sbatch` command. This should only be used if the application the job is running requires it, as doing so would otherwise request more resources than the job needs.
+    Nodes are shared by default ('oversubscribed' in SLURM terminology), meaning different jobs can reserve separate reservable resources (CPU cores, RAM) *on the same node at the same time*. This can be overridden by using the `--exclusive` option to SBATCH in a job script, or in the `sbatch` command, which will make all nodes the job runs on reserved by that job, even if those nodes have spare resources (CPU cores, RAM) that are not being used by that job. As such, this should only be used if the application the job is running requires it.
 
 ### SLURM Directives
 
@@ -186,6 +186,9 @@ When writing job scripts, you should specify to use the job queue with the short
 
     srun -n 80 your_desired_program_or_script
     ```
+
+??? todo
+    Check that this minimal example isn't against Oswald's policies on SLURM usage.
 
 !!! note
     The `debug` queue is meant to be used as a quick check to see if your code and/or script are configured correctly. It is the default queue if you do not specify another queue using the `-p` or `--partition` #SBATCH directive in your job script, or on the command-line using the `--partition` option, like so:

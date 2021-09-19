@@ -61,6 +61,7 @@ nav:
     - Storage and Filesystems: quickstart/storage-and-filesystems.md
     - Software Environment and Modules: quickstart/software-environment.md
     - Running Jobs: quickstart/running-jobs.md
+    - Using Specialised Nodes: quickstart/using-specialised-nodes.md
     - Application Development Tools: quickstart/application-development-tools.md
 
   - Software:

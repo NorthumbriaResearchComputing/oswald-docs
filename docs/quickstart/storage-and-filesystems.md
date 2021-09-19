@@ -12,11 +12,19 @@ Like all HPC clusters, Oswald provides primary, scratch, and high-performance st
 
 Important Notes:
 
-- When using `/local` scratch storage on compute nodes, users are responsible for cleaning up after every job to avoid it becoming full.
 - Each user has their own subdirectory on the main and Lustre filesystems, eg. `/home/bob` (called the user's "home directory") and `/lustre/lzfs/bob`, to ensure different users do not accidentally interfere with each other's files. Users should not, and in some cases cannot, make files or directories directly in `/home` or `/lustre/lzfs`.
-- All users can access the home directories of all other users, though files within each user's home directory are created private. To share a file with other Oswald users, the owner of the file must set read and navigate permissions for 'other users' on their home directory and any parent directories of the file (by using, eg. `chmod o+rx dir_name`), then set the relevant permissions on the file itself (by using, eg. `chmod o+rwx some_script.py`).
+- All users can access the home directories of all other users, though files within each user's home directory are private when created. To share a file with other Oswald users, the owner of the file must set read and navigate permissions for 'other users' on their home directory and any parent directories of the file (by using, eg. `chmod o+rx dir_name`), then set the relevant permissions on the file itself (by using, eg. `chmod o+rwx some_script.py`).
 - There are currently no per-user quotas for user storage, though some restrictions are expected to be introduced in the future.
 - No backups are kept of any data on any filesystem - users are expected to keep their own backups of any software and important input or generated data that they store on the cluster.
+- When using `/local` scratch storage on compute nodes, users are responsible for cleaning up after every job to avoid it becoming full.
+
+??? todo
+    - Is `/tmp` accessible by all, some, or no applications?
+    - On which nodes can it be accessed (head, compute, GPU, visualisation)?
+    - If it's not available for some apps and/or on some nodes, would some apps that need to use it have problems running?
+
+??? todo
+    Should each user/job use a subdirectory of `/local` to avoid usage conflicts? (eg. two jobs using a file with the same name, one job deleting a file being used by another job, etc.)
 
 ## Transferring Files
 

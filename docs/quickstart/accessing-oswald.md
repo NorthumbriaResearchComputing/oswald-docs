@@ -40,6 +40,14 @@ Like most supercomputers, Oswald allows you to log in using Secure Shell (SSH). 
 
     Refer to the documentation for these applications for how to connect using them. The 'server address' you need to connect to is `oswald`.
 
+??? todo
+    How can users connect to Oswald from outside the university?
+    
+    Would this be done by configuring the `oswald` host in the client's ssh config? (If so, also add this to Configuring SSH, below)
+
+??? todo
+    Add detail about setting up graphical ssh clients for Oswald.
+
 ### Security and Authentication
 
 After running the above command (or attempting to log in through your SSH client application), you will be prompted for a password. You should use the password you received in your registration email.
