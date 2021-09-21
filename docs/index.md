@@ -46,9 +46,12 @@ Supercomputers are used in a wide range of fields of research. Oswald is commonl
 | Num | Type               | CPU                                                        | GPU                                                                 | RAM   | Storage             |
 |-----|--------------------|------------------------------------------------------------|---------------------------------------------------------------------|-------|---------------------|
 | 1   | Head Node          | Dual Intel Xeon E5-2630 v4 10 Core 2.2GHz (20 cores total) |                                                                     | 64GB  | 1TB SSD, 185TB HDD  |
-| 32  | Compute Node       | Dual Intel Xeon E5-2680 v4 14 Core 2.4GHz (28 cores total) |                                                                     | 64GB  | 120GB SSD ???       |
+| 32  | Compute Node       | Dual Intel Xeon E5-2680 v4 14 Core 2.4GHz (28 cores total) |                                                                     | 64GB  | 120GB SSD           |
 | 1   | GPU Node           | Intel Skylake SKL-SP 4112 4 Core 2.6GHz                    | 2 x NVIDIA Tesla V100 (each with 640 Tensor cores, 5120 CUDA cores) | 64GB  | 240GB SSD           |
 | 1   | Visualisation Node | Dual Intel Xeon E5-2630 v4 10 Core 2.2GHz (20 cores total) | NVIDIA Tesla M60 (4096 CUDA Cores)                                  | 256GB | 240GB SSD, 12TB HDD |
+
+??? todo
+    `/local` on some compute nodes is 184GB (see [Storage and Filesystems](quickstart/storage-and-filesystems.md)) - do these nodes have larger drives than 120GB?
 
 Oswald also has:
 
