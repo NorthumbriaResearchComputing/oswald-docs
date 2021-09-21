@@ -5,7 +5,7 @@ MPI is a communication protocol for programming parallel computers. It allows th
 - **Portability**: MPI has been implemented for almost every distributed memory architecture.
 - **Speed**: Each implementation is in principle optimized for the hardware on which it runs.
 
-There are 4 MPI-2 implementations available on Oswald:
+There are four MPI-2 implementations available on Oswald:
 
 - MPICH2 (`mpich2`)
 - MVAPICH2 (`mvapich2`)

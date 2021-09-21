@@ -2,6 +2,9 @@
 
 The GNU Compiler Collection (GCC) and its various aliases and extensions are available for use on Oswald.
 
+??? todo
+    What packages (exact names) provide the GCC compilers and any related tools?
+
 The compilers for the languages supported on Oswald (though others may work) are as follows:
 
 | Description          | Command                 |

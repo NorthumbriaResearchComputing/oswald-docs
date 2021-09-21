@@ -6,7 +6,7 @@ On a traditional Unix/Linux system, software and libraries added by users are in
 
 A modules environment provides the means to bundle each software or library package into a self contained module so that:
 
-- System software and libraries are kept separate.
+- System software/libraries are kept separate from user software/libraries.
 - Different versions of the same software or library can be installed side-by-side.
 - Each user can configure their own environment the way they need it.
 
@@ -36,7 +36,9 @@ Currently Loaded Modulefiles:
 
 Now you can use the Intel Compilers, e.g. `ifort`, `icc`, `icpc`.
 
-When you have finished using a module, you can remove it from your environment using `module unload <module-name>`. This command is mainly useful if you want to use a different version of a piece of software or library that does not allow multiple versions to be loaded at once, in which case you must unload the version you are currently using before loading the other version. All modules will automatically be unloaded when you log out. Continuing on from the previous example, to unload the Intel compiler module:
+When you have finished using a module, you can remove it from your environment using `module unload <module-name>`. This command is mainly useful if you want to use a different version of a piece of software or library that does not allow multiple versions to be loaded at once, in which case you must unload the version you are currently using before loading the other version. All modules will automatically be unloaded when you log out.
+
+Continuing on from the previous example, to unload the Intel compiler module:
 
 ```
 $ module unload intel/compiler/64/16.0.4/2016.4.258

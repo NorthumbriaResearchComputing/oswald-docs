@@ -5,7 +5,7 @@ Work on the cluster is submitted as a job to a workload manager which allocates 
 !!! warning
     Working on the head node is only permitted for setting up job scripts, submitting jobs, and editing and compiling source code. Though technically possible, HPC applications (whether pre-installed on Oswald, aquired from an external source, or written/compiled yourself) should **never** be run on the head node, even for testing. If you need to test your application or job, you should run it on the cluster's `debug` queue. See [Job Queues/Partitions and Limits](#job-queuespartitions-and-limits) for details.
     
-    GUI applications also cannot be run on the head node, even for the above purposes. Using graphical applications for writing code or jobscripts, or creating data, must either be done on your own machine (and the files copied onto oswald), or on the visualisation node. For visualising your data/results, or other uses of GUI applications, you should use the visualisation node. For how to use the visualisation node, see [Visualisation Node](using-specialised-nodes.md#visualisation-node).
+    GUI applications also cannot be run on the head node, even for the valid purposes listed above. Using graphical applications for writing code or jobscripts, or creating small amounts of data, must either be done on your own machine (and the files copied onto oswald), or done on the visualisation node. For visualising your data/results, or other uses of GUI applications that involve manipulating large data sets, you should use the visualisation node. This avoids slow data transfers to and from Oswald and allows you to analyse very large data sets that you could not store on your own machine. For how to use the visualisation node, see [Visualisation Node](using-specialised-nodes.md#visualisation-node).
 
 To create a job, a job script must be created and submitted to SLURM. SLURM job scripts may include a range of options to customise their behaviour. Once the job is submitted, it can be monitored and cancelled. The rest of this page describes each of these stages in more detail.
 
@@ -129,7 +129,7 @@ generated during the job execution to leave the node(s) clean for the next job.
 !!! note
     You should try to **use as many resources as you request** and only **request as many resources as you need** to avoid inefficiency in the job allocation system. Reserving resources you don't need only adds to the time other users have to wait for their jobs to start, as resources (CPU cores, RAM) that are reserved by your job but are not being used cannot be used by other jobs for as long as your job is running. It is rare that jobs will need to specify a RAM usage limit, but it is possible.
     
-    Nodes are shared by default ('oversubscribed' in SLURM terminology), meaning different jobs can reserve separate reservable resources (CPU cores, RAM) *on the same node at the same time*. This can be overridden by using the `--exclusive` option to SBATCH in a job script, or in the `sbatch` command, which will make all nodes the job runs on reserved by that job, even if those nodes have spare resources (CPU cores, RAM) that are not being used by that job. As such, this should only be used if the application the job is running requires it.
+    Nodes are shared by default ('oversubscribed' in SLURM terminology), meaning different jobs can reserve their own reservable resources (CPU cores, RAM) *on the same node at the same time*. This can be overridden by specifying exclusive mode for a job using the `--exclusive` option to SBATCH in a job script, or in the `sbatch` command. Exclusive mode will make all nodes that job runs on reserved by that job, even if those nodes have spare resources (CPU cores, RAM) that are not being used by that job. As such, exclusive mode should only be used if the application the job is running requires it.
 
 ### SLURM Directives
 
@@ -146,7 +146,7 @@ The following is a list of common directives.
 | `#SBATCH --ntasks=<num-tasks>`<br>`#SBATCH -n <num-tasks>`            | Request the specified number of tasks (usually equivalent to CPU cores) per node.<br>*Default*: 1 task per node (so 1 task in total if `--nodes` is also not provided in the job script).         |
 | `#SBATCH --time=<time>` \*<br>`#SBATCH -t <time>`                     | Request the maximum amount of time the task will need to run. This can be no more than the maximum time limit of the partition used. <br>*Default*: The maximum time limit of the partition used. |
 | `#SBATCH --begin=<time>` \*                                           | Request the job to start at a specific time.<br>*Default*: As soon as the necessary resources become available.                                                                                   |
-| `#SBATCH --workdir=<directory-path>`<br>`#SBATCH -D <directory-path>` | Set the working directory to run the script in.<br>*Default*: The working directory of the shell that ran `sbatch` to submit the job.                                                             |
+| `#SBATCH --workdir=<directory-path>`<br>`#SBATCH -D <directory-path>` | Set the working directory to run the script in.<br>*Default*: The working directory of the shell at the time it ran `sbatch` to submit the job.                                                   |
 | `#SBATCH --error=<filename>`<br>`#SBATCH -e <filename>`               | Set the error log file name. This can be a relative path from your current directory.<br>*Default*: `slurm-<jobID>.out`                                                                           |
 | `#SBATCH --output=<filename>`<br>`#SBATCH -o <filename>`              | Set the output log file name. This can be a relative path from your current directory.<br>*Default*: `slurm-<jobID>.out`                                                                          |
 | `#SBATCH --mail-user=<user@address>`                                  | Set the email address for job notifications - use your email address.<br>*Default*: Do not notify.                                                                                                |
@@ -162,7 +162,7 @@ It is recommended that in every job script you at least specify the following:
 
 ## Job Queues/Partitions and Limits
 
-Oswald has several job queues, or 'partitions' as SLURM refers to them, with different maximum 'wallclock' (actual/real) run times and maximum number of nodes per job, as in the table below:
+Oswald has several job queues ('partitions' in SLURM terminology), with different maximum 'wallclock' (actual/real) run times and maximum number of nodes per job, as in the table below:
 
 | Queue/Partition Name | Max Number of Nodes | Max Wallclock Runtime |
 |----------------------|---------------------|-----------------------|
@@ -172,7 +172,7 @@ Oswald has several job queues, or 'partitions' as SLURM refers to them, with dif
 | 24 hour              | 24                  | 24 hours / 1 day      |
 | debug                | 1                   | 1 hour                |
 
-When writing job scripts, you should specify to use the job queue with the shortest maximum wallclock time that is more than your job's maximum time. Similarly to setting appropriate resource limits (as mentioned above), this helps to avoid inefficiency in the job allocation system. When specifying the job queue to use using `#SBATCH --partition`, do not put spaces in the queue name (eg. use `24hour`, not `24 hour`).
+When writing job scripts, you should specify to use the job queue with the shortest maximum wallclock time that is more than your job's maximum time. Similarly to setting appropriate resource limits (as mentioned above), this helps to avoid inefficiency in the job allocation system. When specifying the job queue to use (using `#SBATCH --partition`), do not put spaces in the queue name (eg. use `24hour`, not `24 hour`).
 
 ??? example
     **Minimal job script**: If you had a job that you know won't run for more than 60 hours (eg. it previously ran for 52:35:23) and only requires 80 tasks/cores (ie. a minimum of 3 nodes), then in your job script you could specify (as a minimum) something like:
@@ -200,7 +200,7 @@ When writing job scripts, you should specify to use the job queue with the short
     Normal jobs should **specify one of the other queues**, as appropriate for the job's requirements.
 
 !!! warning
-    If the requested number of nodes (`--nodes`) exceeds the partition's maximum number of nodes, or the requested time limit of a job script (`--time`) exceeds the partition's maximum time limit, then the job will be left in a PENDING state (possibly indefinitely), so the job will not run.
+    If the requested number of nodes (`--nodes`) exceeds the partition's maximum number of nodes, or the requested time limit of a job script (`--time`) exceeds the partition's maximum time limit, then the job will be left in a PENDING state (possibly indefinitely), meaning it will not run.
 
 ## Submitting a Job
 
@@ -235,7 +235,7 @@ You can monitor the progress of your job using the `squeue` command. This will s
 - Job name
 - Initiating user
 - Current status - usually either pending (`PD`) or running (`R`)
-- Wallclock running time - given in the format: `days-hours:minutes:seconds`
+- Wallclock running time - given in the format `days-hours:minutes:seconds`
 - Number of nodes being used
 - Exact list of nodes reserved - ranges are given in square brackets
 
@@ -258,14 +258,14 @@ You can monitor the progress of your job using the `squeue` command. This will s
 You will be sent an email when your job starts/ends/fails according to the setting of the `--mail-user` and `--mail-type` #SBATCH directives in your job script.
 
 !!! tip
-    This feature is very useful when you submit a large job which may take days to complete, you can logout and leave your job running and return when you receive an email when your job finishes, hopefully successfully.
+    This feature is very useful when you submit a large job which may take days to complete - you can logout, leaving your job running, and return when you receive the email that your job has finished, hopefully successfully.
 
 ??? example
     In the 'Hello World' example, the emails will be sent almost simultaneously, as the job completes almost instantly (it is only making a file containing "Hello World from node X rank Y out of Z" 20 times, after all!).
 
 ## Job Output
 
-When the job has finished the job details will disappear from the queue (and output of `squeue`) and you can then examine the output file produced (if one is produced by your job). The file will be named whatever you specified in the `#SBATCH --output <filename.log>` directive, and will be located in your current directory. If you have logged out and logged back in since submitting the job, the file will be located in whichever directory was your current directory at the time you submitted the job with `sbatch`.
+When the job has finished, the job details will disappear from the queue (and output of `squeue`) and you can then examine the output file produced (if one is produced by your job). The file will be named whatever you specified in the `#SBATCH --output <filename.log>` directive, and will be located in your current directory. If you have logged out and logged back in since submitting the job, the file will be located in whichever directory was your current directory at the time you submitted the job with `sbatch`.
 
 ??? example
     The output file for the 'Hello World' job is `hello-mpi-20220.out`. As we expect it to be short, we can inspect it with the `cat` command:
@@ -295,7 +295,7 @@ When the job has finished the job details will disappear from the queue (and out
     ```
 
     !!! note
-        As this is an MPI application, the output file is added to by each of the processes/tasks running on the requested nodes independently of one another (i.e. no process/task depends on the output of any other process/task). As such, the output of this job probably won't be in sequential order - the messages appear in the order in which the processes/tasks run and print the text (which will appear to be almost arbitrary after the job has started).
+        As this is an MPI application, the output file is added to by each of the processes/tasks running on the requested nodes independently of one another (i.e. no process/task depends waits for any other process/task to output its line). As such, the output of this job probably won't be in sequential order - the messages appear in the order in which the processes/tasks run and print the text (which will appear to be almost arbitrary after the job has started).
 
 ## Cancelling a Job
 
