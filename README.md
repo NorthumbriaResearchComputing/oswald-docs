@@ -1,6 +1,6 @@
 # Oswald Documentation Website
 
-Oswald is Northumbria University's HPC cluster. See [the documentation website](https://nu-cem.github.io/HPC_internship_2021/) for more information.
+Oswald is Northumbria University's HPC cluster. See [the documentation website](https://rsc-northumbria.github.io/oswald-docs) for more information.
 
 ## Building the Docs Offline
 
