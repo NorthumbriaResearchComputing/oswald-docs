@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     
-    <title>Oswald User Documentation and Newsletter</title>
-    <description>Documentation and newsletter for Northumbria University&#39;s Oswald HPC cluster (supercomputer)</description>
-    <link>https://nu-cem.github.io/HPC_internship_2021/</link>
-    <atom:link href="https://nu-cem.github.io/HPC_internship_2021/feed_rss_updated.xml" rel="self" type="application/rss+xml" />
+    <title>Northumbria University Research Computing Community</title>
+    <description>Documentation, events and newsletter for Northumbria University&#39;s Research Computing Community</description>
+    <link>https://rsc-northumbria.github.io/oswald-docs/</link>
+    <atom:link href="https://rsc-northumbria.github.io/oswald-docs/feed_rss_updated.xml" rel="self" type="application/rss+xml" />
 
     
     
     
-    <docs>https://github.com/musicmrman99/HPC_Internship_2021/</docs>
+    <docs>https://github.com/RSC-Northumbria/oswald-docs/</docs>
     <language>en</language>
 
     
-    <pubDate>Wed, 22 Sep 2021 09:55:43 -0000</pubDate>
-    <lastBuildDate>Wed, 22 Sep 2021 09:55:43 -0000</lastBuildDate>
+    <pubDate>Wed, 22 Sep 2021 10:21:51 -0000</pubDate>
+    <lastBuildDate>Wed, 22 Sep 2021 10:21:51 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -24,9 +24,9 @@
     
     
     <image>
-      <url>https://nu-cem.github.io/HPC_internship_2021/assets/images/logo.png</url>
-      <title>Oswald User Documentation and Newsletter</title>
-      <link>https://nu-cem.github.io/HPC_internship_2021/</link>
+      <url>https://rsc-northumbria.github.io/oswald-docs/assets/images/logo.png</url>
+      <title>Northumbria University Research Computing Community</title>
+      <link>https://rsc-northumbria.github.io/oswald-docs/</link>
     </image>
     
 
@@ -73,11 +73,11 @@
     &lt;/form&gt;
 &lt;/div&gt;
 &lt;!--End mc_embed_signup--&gt;</description>
-      <link>https://nu-cem.github.io/HPC_internship_2021/newsletter/signup/</link>
+      <link>https://rsc-northumbria.github.io/oswald-docs/newsletter/signup/</link>
       <pubDate>Wed, 22 Sep 2021 09:20:01 -0000</pubDate>
-      <source url="https://nu-cem.github.io/HPC_internship_2021/feed_rss_updated.xml">Oswald User Documentation and Newsletter</source>
+      <source url="https://rsc-northumbria.github.io/oswald-docs/feed_rss_updated.xml">Northumbria University Research Computing Community</source>
       
-      <guid isPermaLink="true">https://nu-cem.github.io/HPC_internship_2021/newsletter/signup/</guid>
+      <guid isPermaLink="true">https://rsc-northumbria.github.io/oswald-docs/newsletter/signup/</guid>
       
     </item>
     
@@ -87,11 +87,11 @@
       
       <description>&lt;h1&gt;HPC/RSE Newsletter - October 2021&lt;/h1&gt;
 &lt;p&gt;todo&lt;/p&gt;</description>
-      <link>https://nu-cem.github.io/HPC_internship_2021/newsletter/2021-10/</link>
+      <link>https://rsc-northumbria.github.io/oswald-docs/newsletter/2021-10/</link>
       <pubDate>Tue, 21 Sep 2021 18:07:10 -0000</pubDate>
-      <source url="https://nu-cem.github.io/HPC_internship_2021/feed_rss_updated.xml">Oswald User Documentation and Newsletter</source>
+      <source url="https://rsc-northumbria.github.io/oswald-docs/feed_rss_updated.xml">Northumbria University Research Computing Community</source>
       
-      <guid isPermaLink="true">https://nu-cem.github.io/HPC_internship_2021/newsletter/2021-10/</guid>
+      <guid isPermaLink="true">https://rsc-northumbria.github.io/oswald-docs/newsletter/2021-10/</guid>
       
     </item>
     
