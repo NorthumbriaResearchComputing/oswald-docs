@@ -76,3 +76,9 @@ nav:
     - Known Issues: support/known-issues.md
     
   - Events: events/events.md
+
+  - Newsletter:
+    - Sign Up: newsletter/signup.md
+    - 2021:
+      - October: newsletter/2021-10.md
+
