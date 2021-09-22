@@ -6,6 +6,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://nu-cem.github.io/HPC_internship_2021/newsletter/2021-10/</loc>
+         <lastmod>2021-09-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nu-cem.github.io/HPC_internship_2021/newsletter/signup/</loc>
+         <lastmod>2021-09-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://nu-cem.github.io/HPC_internship_2021/quickstart/accessing-oswald/</loc>
          <lastmod>2021-09-22</lastmod>
          <changefreq>daily</changefreq>
