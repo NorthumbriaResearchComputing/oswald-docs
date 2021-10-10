@@ -49,7 +49,7 @@ Supercomputers are used in a wide range of fields of research. Oswald is commonl
 | 1   | Visualisation Node | Dual Intel Xeon E5-2630 v4 10 Core 2.2GHz (20 cores total) | NVIDIA Tesla M60 (4096 CUDA Cores)                                  | 256GB | 240GB SSD, 12TB HDD |
 
 ??? todo
-    `/local` on some compute nodes is 184GB (see [Storage and Filesystems](oswald/quickstart/storage-and-filesystems.md)) - do these nodes have larger drives than 120GB?
+    `/local` on some compute nodes is 184GB (see [Storage and Filesystems](quickstart/storage-and-filesystems.md)) - do these nodes have larger drives than 120GB?
 
 Oswald also has:
 
