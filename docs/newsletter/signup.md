@@ -1,3 +1,5 @@
+Our newsletter is a roundup of the latest news, ideas, projects, and events from across the wider research computing community.
+
 <!-- Begin Mailchimp Signup Form -->
 <link href="https://cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
 <style type="text/css">

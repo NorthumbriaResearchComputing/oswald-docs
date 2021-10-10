@@ -8,7 +8,7 @@ Many researchers at Northumbria use computing for their research. This includes 
 
 ## Contributing to the community
 
-If you've been working on some interesting research or project, or have some other news or ideas you want to share with the community, we would love to know. Please get in touch with ??? to have your submission considered for inclusion in our next newsletter.
+If you've been using software/computing as part of your research, been working on a software/computing project to assist in your or others' research, or have some news or ideas about research software that you want to share with the community, then we would love to hear from you. Please get in touch with ??? to have your submission considered for inclusion in our next newsletter.
 
 If you're hosting a research computing-related event, we would also like to hear about it. Please get in touch with ??? and we can add your event to our list.
 
