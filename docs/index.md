@@ -1,6 +1,6 @@
 # Northumbria University Research Computing Community 
 
-This is the website for the Northumbria University Research Computing Community. You can find information about upcoming events, sign-up to our newsletter, browse past newsletters, or access documentation for the NU Supercomputer Oswald.
+This is the website for the Northumbria University Research Computing Community. You can find information about [upcoming events](events/events.md), [sign-up to our newsletter](newsletter/signup.md), browse past newsletters, or access documentation for the [NU Supercomputer Oswald](oswald/what-is-oswald).
 
 ## What is the Research Computing Community?
 
