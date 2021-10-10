@@ -1,10 +1,10 @@
-# Oswald Documentation Website
+# Northumbria University Research Computing Community Website
 
-Oswald is Northumbria University's HPC cluster. See [the documentation website](https://rsc-northumbria.github.io/oswald-docs) for more information.
+This is the website for the Northumbria University Research Computing Community. It is hosted at: https://rsc-northumbria.github.io/oswald-docs/.
 
-## Building the Docs Offline
+## Building the Website Offline
 
-To build and preview the docs offline (eg. for more significant changes than content changes), you can use [conda](https://docs.conda.io/en/latest/):
+To build and preview the website offline (eg. for more significant changes than content changes), you can use [conda](https://docs.conda.io/en/latest/):
 
 ```
 git clone https://github.com/NU_SEM/HPC_internship_2021/
