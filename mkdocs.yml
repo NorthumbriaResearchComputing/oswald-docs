@@ -26,7 +26,9 @@ theme:
     repo: fontawesome/brands/github
 
   features:
-    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.expand
 
   palette:
     - media: "(prefers-color-scheme: light)"
