@@ -1,0 +1,1423 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation, events and newsletter for Northumbria University's Research Computing Community">
+      
+      
+      
+      
+        <link rel="canonical" href="https://rsc-northumbria.github.io/oswald-docs/oswald/quickstart/running-jobs/">
+      
+      <link rel="icon" href="../../../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.3">
+    
+    
+      
+        <title>Running Jobs - Northumbria University Research Computing Community</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.5143246d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#jobs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Northumbria University Research Computing Community" class="md-header__button md-logo" aria-label="Northumbria University Research Computing Community" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Northumbria University Research Computing Community
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Running Jobs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/RSC-Northumbria/oswald-docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    RSC-Northumbria/oswald-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../what-is-oswald/" class="md-tabs__link md-tabs__link--active">
+        Oswald Documentation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../events/events/" class="md-tabs__link">
+        Events
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../newsletter/signup/" class="md-tabs__link">
+        Newsletter
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Northumbria University Research Computing Community" class="md-nav__button md-logo" aria-label="Northumbria University Research Computing Community" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.png" alt="logo">
+
+    </a>
+    Northumbria University Research Computing Community
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/RSC-Northumbria/oswald-docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    RSC-Northumbria/oswald-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Oswald Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Oswald Documentation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Oswald Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-is-oswald/" class="md-nav__link">
+        What is Oswald?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Quickstart
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Quickstart" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Quickstart
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accessing-oswald/" class="md-nav__link">
+        Accessing Oswald
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage-and-filesystems/" class="md-nav__link">
+        Storage and Filesystems
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software-environment/" class="md-nav__link">
+        Software Environment and Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Running Jobs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Running Jobs
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Page Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Page Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#job-scripts" class="md-nav__link">
+    Job Scripts
+  </a>
+  
+    <nav class="md-nav" aria-label="Job Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slurm-directives" class="md-nav__link">
+    SLURM Directives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-queuespartitions-and-limits" class="md-nav__link">
+    Job Queues/Partitions and Limits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submitting-a-job" class="md-nav__link">
+    Submitting a Job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-a-job" class="md-nav__link">
+    Monitoring a Job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-output" class="md-nav__link">
+    Job Output
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cancelling-a-job" class="md-nav__link">
+    Cancelling a Job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-information" class="md-nav__link">
+    More Information
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../using-specialised-nodes/" class="md-nav__link">
+        Using Specialised Nodes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../application-development-tools/" class="md-nav__link">
+        Application Development Tools
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/software-list/" class="md-nav__link">
+        Software List
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/mpi/" class="md-nav__link">
+        MPI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/gnu-compilers/" class="md-nav__link">
+        GNU Compilers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/intel-compilers/" class="md-nav__link">
+        Intel Compilers
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" data-md-state="indeterminate" type="checkbox" id="__nav_2_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          Support
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Support" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Support
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/university-support/" class="md-nav__link">
+        University Support
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/faqs/" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/known-issues/" class="md-nav__link">
+        Known Issues
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Events
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Events" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Events
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../events/events/" class="md-nav__link">
+        All Events
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Newsletter
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Newsletter" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Newsletter
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../newsletter/signup/" class="md-nav__link">
+        Sign Up
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" data-md-state="indeterminate" type="checkbox" id="__nav_4_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          2021
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2021" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          2021
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../newsletter/2021-10/" class="md-nav__link">
+        October
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Page Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Page Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#job-scripts" class="md-nav__link">
+    Job Scripts
+  </a>
+  
+    <nav class="md-nav" aria-label="Job Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slurm-directives" class="md-nav__link">
+    SLURM Directives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-queuespartitions-and-limits" class="md-nav__link">
+    Job Queues/Partitions and Limits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submitting-a-job" class="md-nav__link">
+    Submitting a Job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-a-job" class="md-nav__link">
+    Monitoring a Job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-output" class="md-nav__link">
+    Job Output
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cancelling-a-job" class="md-nav__link">
+    Cancelling a Job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-information" class="md-nav__link">
+    More Information
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/RSC-Northumbria/oswald-docs/edit/main/docs/oswald/quickstart/running-jobs.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="jobs">Jobs<a class="headerlink" href="#jobs" title="Permanent link">&para;</a></h1>
+<p>Work on the cluster is submitted as a job to a workload manager which allocates the job to one or more compute nodes, depending on the requested and available resources. Jobs are held in a job queue until sufficient resources are available on the cluster to run the job. Several workload managers exist for different supercomputers, such as PBSPro, Torque, SGE, and SLURM. Oswald uses the SLURM ('Simple Linux Utility for Resource Management') workload manager.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Working on the head node is only permitted for setting up job scripts, submitting jobs, and editing and compiling source code. Though technically possible, HPC applications (whether pre-installed on Oswald, aquired from an external source, or written/compiled yourself) should <strong>never</strong> be run on the head node, even for testing. If you need to test your application or job, you should run it on the cluster's <code>debug</code> queue. See <a href="#job-queuespartitions-and-limits">Job Queues/Partitions and Limits</a> for details.</p>
+<p>GUI applications also cannot be run on the head node, even for the valid purposes listed above. Using graphical applications for writing code or jobscripts, or creating small amounts of data, must either be done on your own machine (and the files copied onto oswald), or done on the visualisation node. For visualising your data/results, or other uses of GUI applications that involve manipulating large data sets, you should use the visualisation node. This avoids slow data transfers to and from Oswald and allows you to analyse very large data sets that you could not store on your own machine. For how to use the visualisation node, see <a href="../using-specialised-nodes/#visualisation-node">Visualisation Node</a>.</p>
+</div>
+<p>To create a job, a job script must be created and submitted to SLURM. SLURM job scripts may include a range of options to customise their behaviour. Once the job is submitted, it can be monitored and cancelled. The rest of this page describes each of these stages in more detail.</p>
+<h2 id="job-scripts">Job Scripts<a class="headerlink" href="#job-scripts" title="Permanent link">&para;</a></h2>
+<p>A job script is a shell script in which you specify the command(s) to run when the job is run, as well as setting various options for the job and other application-specific environment variables.</p>
+<p>A job script has the following basic structure:</p>
+<ol>
+<li><strong>Shebang Line</strong>: A single line that specifies the shell to use (often <code>#!/bin/sh</code> or <code>#!/bin/bash</code>).</li>
+<li><strong>SLURM Directives</strong>: Optional lines that SLURM uses to set properties about the job, such as the number of nodes to use, the number of processor cores to use, memory requirements, etc. These can either have a 'long' format: <code>#SBATCH --&lt;option&gt;=&lt;parameter&gt;</code>, or a short format: <code>#SBATCH -&lt;o&gt; &lt;parameter&gt;</code> (where <code>&lt;o&gt;</code> is the option's single-character name). In either case, leave no space between the <code>#</code> and <code>SBATCH</code>, otherwise the directive will be treated as a comment and ignored. Many common options and what they do are listed <a href="#slurm-directives">below</a>.</li>
+<li><strong>Setup</strong>: Optional shell commands to load required modules and define
+application-specific environment variables.</li>
+<li><strong>Application Execution</strong>: The shell command(s) to execute the application. This could include running software you have downloaded to assist in your research, an application you have written yourself, a script that uses pre-installed packages, or a combination of these.</li>
+<li><strong>Garbage Collection</strong>: The shell commands to clean up any temporary workfiles
+generated during the job execution to leave the node(s) clean for the next job.</li>
+</ol>
+<details class="example"><summary>Example</summary><p>Assume we have created a simple MPI-based C program:</p>
+<div class="highlight"><pre><span></span><code>/* Hello World using MPI */
+
+// include the MPI header files
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;mpi.h&gt;
+
+int main(int argc, char **argv)
+{
+    int rank, size, name_len;
+    char hostname[20];
+
+    // Initialise the MPI environment
+    MPI_Init(&amp;argc, &amp;argv);
+
+    // Get the number of processes
+    MPI_Comm_size(MPI_COMM_WORLD, &amp;size);
+
+    // Get the rank of the process
+    MPI_Comm_rank(MPI_COMM_WORLD, &amp;rank);
+
+    // Get the name of the node
+    MPI_Get_processor_name(hostname, &amp;name_len);
+
+    // Print Hello World message from the process
+    printf(&quot;Hello World from node %s rank %d out of %d\n&quot;, hostname, rank, size);
+
+    //Finalize the MPI environment
+    MPI_Finalize();
+    return 0;
+}
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you wish to follow along with this example, the program above is available for you to copy at <code>/home/EXAMPLES/HelloWorld/hello-mpi.c</code> on Oswald, or you can paste the above code into your favourite text editor and save it as a <code>.c</code> file.</p>
+</div>
+<p>We will use the GNU MPI compiler with the OpenMPI libraries to compile and build the executable. The GNU MPI compiler is provided by the OpenMPI module. First we need to load the OpenMPI library module into our environment:</p>
+<div class="highlight"><pre><span></span><code>module load openmpi/gcc/64/1.10.0-hfi
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We need to load the module with the <code>-hfi</code> suffix to use the OmniPath Interconnect. See <a href="../../software/mpi/">MPI</a> for details.</p>
+</div>
+<p>Next, compile the source code using the GNU MPI C compiler (<code>mpicc</code>):</p>
+<div class="highlight"><pre><span></span><code>mpicc hello-mpi.c -o hello-mpi
+</code></pre></div>
+<p>Finally, below is an example job script, named <code>slurm-hello-mpi.sh</code>, to run the 'Hello World' application on the cluster.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+
+<span class="c1"># Configure the SBATCH directives for this job</span>
+
+<span class="c1"># Set Job Name to be displayed in the job queue</span>
+<span class="c1">#SBATCH --job-name=Hello-MPI</span>
+
+<span class="c1"># Specify where the output of this job will be stored</span>
+<span class="c1"># %j = job number</span>
+<span class="c1">#SBATCH --output=hello-mpi-%j.out</span>
+
+<span class="c1"># Set maximum wallclock time limit for this job</span>
+<span class="c1"># Time format = days-hours:minutes:seconds</span>
+<span class="c1">#SBATCH --time=0-00:30:00</span>
+
+<span class="c1"># Set number of nodes to use</span>
+<span class="c1">#SBATCH --nodes=2</span>
+
+<span class="c1"># Set number of tasks to run per node (tasks=cores/threads)</span>
+<span class="c1">#SBATCH --ntasks-per-node=10</span>
+
+<span class="c1"># Set the partition/queue to submit the job to</span>
+<span class="c1">#SBATCH --partition=24hour</span>
+
+<span class="c1"># Set email address to send email notifications</span>
+<span class="c1">#SBATCH --mail-user=your.email.address@here</span>
+
+<span class="c1"># Send an email when job has started, finished or aborted</span>
+<span class="c1">#SBATCH --mail-type=ALL</span>
+
+<span class="c1"># Setup</span>
+<span class="c1"># Load the modules required by this job</span>
+module load slurm openmpi/gcc/64/1.10.2-hfi
+
+<span class="c1"># Run the application using 20 process slots</span>
+mpirun -n <span class="m">20</span> hello-mpi
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The example job script above is available for you to copy at <code>/home/EXAMPLES/HelloWorld/slurm-hello-mpi.sh</code> on Oswald, or you can paste the above code into your favourite text editor and save it as a <code>.sh</code> file.</p>
+</div>
+<p>The job script above is configured so that when it is submitted, it is submitted to the 24-hour queue (<code>--partition=24hour</code>). Then, once suffient resources are available on the cluster, SLURM will run the job over 2 nodes (<code>--nodes=2</code>) with 10 tasks per node (<code>--ntasks=10</code>), for a total of 20 process slots. The <code>mpirun</code> command will run the given application (<code>hello-mpi</code>) over the specified number of process slots (<code>-n 20</code>). Here, <code>20</code> makes it fill all 20 slots the job script requests.</p>
+<p>The job script also specifies that it will run for no more than 30 minutes (<code>--time=0-00:30:00</code>), and to notify you (<code>--mail-user=your.email.address@here</code>) when it has started and completed, or failed (<code>--mail-type=ALL</code>). Once it has completed, you will be able to access the output of the job in a file whose name is in the format <code>hello-mpi-&lt;jobID&gt;.out</code>, eg. <code>hello-mpi-20220.out</code>.</p>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You should try to <strong>use as many resources as you request</strong> and only <strong>request as many resources as you need</strong> to avoid inefficiency in the job allocation system. Reserving resources you don't need only adds to the time other users have to wait for their jobs to start, as resources (CPU cores, RAM) that are reserved by your job but are not being used cannot be used by other jobs for as long as your job is running. It is rare that jobs will need to specify a RAM usage limit, but it is possible.</p>
+<p>Nodes are shared by default ('oversubscribed' in SLURM terminology), meaning different jobs can reserve their own reservable resources (CPU cores, RAM) <em>on the same node at the same time</em>. This can be overridden by specifying exclusive mode for a job using the <code>--exclusive</code> option to SBATCH in a job script, or in the <code>sbatch</code> command. Exclusive mode will make all nodes that job runs on reserved by that job, even if those nodes have spare resources (CPU cores, RAM) that are not being used by that job. As such, exclusive mode should only be used if the application the job is running requires it.</p>
+</div>
+<h3 id="slurm-directives">SLURM Directives<a class="headerlink" href="#slurm-directives" title="Permanent link">&para;</a></h3>
+<p>The following is a list of common directives.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lists of possible values for directives given here may not be comprehensive. A full list of all directives and possible parameter values can be seen by running <code>sbatch -help</code>, or running <code>sbatch -usage</code> for a more concise list.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Option (long and short format)</th>
+<th>Description and Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#SBATCH --jobname=&lt;jobname&gt;</code><br><code>#SBATCH -J &lt;jobname&gt;</code></td>
+<td>Set the name of the job.<br><em>Default</em>: The name of the job script.</td>
+</tr>
+<tr>
+<td><code>#SBATCH --partition=&lt;partition&gt;</code><br><code>#SBATCH -p &lt;partition&gt;</code></td>
+<td>Run the job in the specified partition/queue.<br><em>Default</em>: <code>debug</code> (for Oswald).</td>
+</tr>
+<tr>
+<td><code>#SBATCH --nodes=&lt;num-nodes&gt;</code><br><code>#SBATCH -N &lt;num-nodes&gt;</code></td>
+<td>Request the specified number of nodes.<br><em>Default</em>: As many nodes as needed to provide for the number of tasks.</td>
+</tr>
+<tr>
+<td><code>#SBATCH --ntasks=&lt;num-tasks&gt;</code><br><code>#SBATCH -n &lt;num-tasks&gt;</code></td>
+<td>Request the specified number of tasks (usually equivalent to CPU cores) per node.<br><em>Default</em>: 1 task per node (so 1 task in total if <code>--nodes</code> is also not provided in the job script).</td>
+</tr>
+<tr>
+<td><code>#SBATCH --time=&lt;time&gt;</code> *<br><code>#SBATCH -t &lt;time&gt;</code></td>
+<td>Request the maximum amount of time the task will need to run. This can be no more than the maximum time limit of the partition used. <br><em>Default</em>: The maximum time limit of the partition used.</td>
+</tr>
+<tr>
+<td><code>#SBATCH --begin=&lt;time&gt;</code> *</td>
+<td>Request the job to start at a specific time.<br><em>Default</em>: As soon as the necessary resources become available.</td>
+</tr>
+<tr>
+<td><code>#SBATCH --workdir=&lt;directory-path&gt;</code><br><code>#SBATCH -D &lt;directory-path&gt;</code></td>
+<td>Set the working directory to run the script in.<br><em>Default</em>: The working directory of the shell at the time it ran <code>sbatch</code> to submit the job.</td>
+</tr>
+<tr>
+<td><code>#SBATCH --error=&lt;filename&gt;</code><br><code>#SBATCH -e &lt;filename&gt;</code></td>
+<td>Set the error log file name. This can be a relative path from your current directory.<br><em>Default</em>: <code>slurm-&lt;jobID&gt;.out</code></td>
+</tr>
+<tr>
+<td><code>#SBATCH --output=&lt;filename&gt;</code><br><code>#SBATCH -o &lt;filename&gt;</code></td>
+<td>Set the output log file name. This can be a relative path from your current directory.<br><em>Default</em>: <code>slurm-&lt;jobID&gt;.out</code></td>
+</tr>
+<tr>
+<td><code>#SBATCH --mail-user=&lt;user@address&gt;</code></td>
+<td>Set the email address for job notifications - use your email address.<br><em>Default</em>: Do not notify.</td>
+</tr>
+<tr>
+<td><code>#SBATCH --mail-type=&lt;BEGIN, END, FAIL, ALL&gt;</code></td>
+<td>Set the type(s) of job notification to send - usually one of <code>BEGIN</code>, <code>END</code>, <code>FAIL</code>, or <code>ALL</code>.<br><em>Default</em>: Do not notify.</td>
+</tr>
+</tbody>
+</table>
+<p>* Durations are given in the format <code>hours:minutes:seconds</code> or <code>days-hours:minutes:seconds</code>.</p>
+<p>It is recommended that in every job script you at least specify the following:</p>
+<ul>
+<li><strong>Number of tasks</strong>: This will depend on your job.</li>
+<li><strong>Maximum runtime</strong>: This may require an educated guess or experience from previous job submissions. If in doubt, where you want to run several similar jobs, use the maximum for the relevant job queue for the first job submission, then use a reasonable value for the remaining job submissions based on how long the first one took to run. You can find out how long a job took to run by turning on email notifications for when the job starts and completes.</li>
+<li><strong>Partition</strong>: Select a suitable partition based on the number of nodes, tasks, and time needed.</li>
+</ul>
+<h2 id="job-queuespartitions-and-limits">Job Queues/Partitions and Limits<a class="headerlink" href="#job-queuespartitions-and-limits" title="Permanent link">&para;</a></h2>
+<p>Oswald has several job queues ('partitions' in SLURM terminology), with different maximum 'wallclock' (actual/real) run times and maximum number of nodes per job, as in the table below:</p>
+<table>
+<thead>
+<tr>
+<th>Queue/Partition Name</th>
+<th>Max Number of Nodes</th>
+<th>Max Wallclock Runtime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>120 hour</td>
+<td>4</td>
+<td>120 hours / 5 days</td>
+</tr>
+<tr>
+<td>72 hour</td>
+<td>4</td>
+<td>72 hours / 3 days</td>
+</tr>
+<tr>
+<td>48 hour</td>
+<td>8</td>
+<td>48 hours / 2 days</td>
+</tr>
+<tr>
+<td>24 hour</td>
+<td>24</td>
+<td>24 hours / 1 day</td>
+</tr>
+<tr>
+<td>debug</td>
+<td>1</td>
+<td>1 hour</td>
+</tr>
+</tbody>
+</table>
+<p>When writing job scripts, you should specify to use the job queue with the shortest maximum wallclock time that is more than your job's maximum time. Similarly to setting appropriate resource limits (as mentioned above), this helps to avoid inefficiency in the job allocation system. When specifying the job queue to use (using <code>#SBATCH --partition</code>), do not put spaces in the queue name (eg. use <code>24hour</code>, not <code>24 hour</code>).</p>
+<details class="example"><summary>Example</summary><p><strong>Minimal job script</strong>: If you had a job that you know won't run for more than 60 hours (eg. it previously ran for 52:35:23) and only requires 80 tasks/cores (ie. a minimum of 3 nodes), then in your job script you could specify (as a minimum) something like:</p>
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+
+#SBATCH --ntasks 80
+#SBATCH --time 60:00:00
+#SBATCH --partition 72hour
+
+srun -n 80 your_desired_program_or_script
+</code></pre></div>
+</details>
+<details class="todo"><summary>Todo</summary><p>Check that this minimal example isn't against Oswald's policies on SLURM usage.</p>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>debug</code> queue is meant to be used as a quick check to see if your code and/or script are configured correctly. It is the default queue if you do not specify another queue using the <code>-p</code> or <code>--partition</code> #SBATCH directive in your job script, or on the command-line using the <code>--partition</code> option, like so:</p>
+<div class="highlight"><pre><span></span><code>sbatch --partition=48hour slurm-hello-mpi.sh
+</code></pre></div>
+<p>Normal jobs should <strong>specify one of the other queues</strong>, as appropriate for the job's requirements.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If the requested number of nodes (<code>--nodes</code>) exceeds the partition's maximum number of nodes, or the requested time limit of a job script (<code>--time</code>) exceeds the partition's maximum time limit, then the job will be left in a PENDING state (possibly indefinitely), meaning it will not run.</p>
+</div>
+<h2 id="submitting-a-job">Submitting a Job<a class="headerlink" href="#submitting-a-job" title="Permanent link">&para;</a></h2>
+<p>Once a job script is made it can be submitted to SLURM to be run on the cluster using the <code>sbatch</code> command:</p>
+<div class="highlight"><pre><span></span><code>$ sbatch &lt;script-name&gt;
+</code></pre></div>
+<p>It will then output a line that looks like:</p>
+<div class="highlight"><pre><span></span><code>Submitted batch job XXXXX
+</code></pre></div>
+<p>Where <code>XXXXX</code> is the job number assigned to your submitted job - you can use this to manage the job after it has been submitted.</p>
+<details class="example"><summary>Example</summary><p>Continuing on from the previous example:</p>
+<div class="highlight"><pre><span></span><code>$ sbatch slurm-hello-mpi.sh
+Submitted batch job 20220
+</code></pre></div>
+</details>
+<h2 id="monitoring-a-job">Monitoring a Job<a class="headerlink" href="#monitoring-a-job" title="Permanent link">&para;</a></h2>
+<p>You can monitor the progress of your job using the <code>squeue</code> command. This will state the following information about every job currently running on the cluster:</p>
+<ul>
+<li>Job ID</li>
+<li>Partition</li>
+<li>Job name</li>
+<li>Initiating user</li>
+<li>Current status - usually either pending (<code>PD</code>) or running (<code>R</code>)</li>
+<li>Wallclock running time - given in the format <code>days-hours:minutes:seconds</code></li>
+<li>Number of nodes being used</li>
+<li>Exact list of nodes reserved - ranges are given in square brackets</li>
+</ul>
+<details class="example"><summary>Example</summary><p>Assuming our job using the <code>hello-world-mpi.sh</code> job script was submitted with the job ID 20220, <code>squeue</code> might output the following (our job is the last job listed):</p>
+<div class="highlight"><pre><span></span><code>$ squeue
+JOBID PARTITION     NAME     USER ST       TIME NODES NODELIST(REASON)
+20211    24hour slurm-he   jimbob PD       0:00     2 (Resources)
+20165   120hour MOS_Soil  leanneW  R 1-17:54:19     3 compute[022-024]
+20164   120hour SNI_Soil  leanneW  R 1-17:55:26     3 compute[019-021]
+20186   120hour Dots3D58  elfegoG  R    3:08:27     1 compute010
+20070   120hour MATLAB-p   jimbob  R 4-06:08:07     1 compute001
+20220    24hour Hello-MP   jimbob  R       0:01     2 compute[016-017]
+</code></pre></div>
+<p>This shows our job has been running on 2 nodes (<code>compute016</code> and <code>compute017</code>) for 1 second. Note that job 20211 is being held in a pending state (<code>PD</code>) as the requested resources are not available - the job will start running once the requested resources are available.</p>
+</details>
+<p>You will be sent an email when your job starts/ends/fails according to the setting of the <code>--mail-user</code> and <code>--mail-type</code> #SBATCH directives in your job script.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This feature is very useful when you submit a large job which may take days to complete - you can logout, leaving your job running, and return when you receive the email that your job has finished, hopefully successfully.</p>
+</div>
+<details class="example"><summary>Example</summary><p>In the 'Hello World' example, the emails will be sent almost simultaneously, as the job completes almost instantly (it is only making a file containing "Hello World from node X rank Y out of Z" 20 times, after all!).</p>
+</details>
+<h2 id="job-output">Job Output<a class="headerlink" href="#job-output" title="Permanent link">&para;</a></h2>
+<p>When the job has finished, the job details will disappear from the queue (and output of <code>squeue</code>) and you can then examine the output file produced (if one is produced by your job). The file will be named whatever you specified in the <code>#SBATCH --output &lt;filename.log&gt;</code> directive, and will be located in your current directory. If you have logged out and logged back in since submitting the job, the file will be located in whichever directory was your current directory at the time you submitted the job with <code>sbatch</code>.</p>
+<details class="example"><summary>Example</summary><p>The output file for the 'Hello World' job is <code>hello-mpi-20220.out</code>. As we expect it to be short, we can inspect it with the <code>cat</code> command:</p>
+<div class="highlight"><pre><span></span><code>$ cat hello-mpi-20220.out
+Hello World from node compute016 process 4 out of 20
+Hello World from node compute016 process 5 out of 20
+Hello World from node compute016 process 6 out of 20
+Hello World from node compute016 process 8 out of 20
+Hello World from node compute016 process 9 out of 20
+Hello World from node compute016 process 2 out of 20
+Hello World from node compute016 process 3 out of 20
+Hello World from node compute017 process 14 out of 20
+Hello World from node compute016 process 0 out of 20
+Hello World from node compute016 process 1 out of 20
+Hello World from node compute016 process 7 out of 20
+Hello World from node compute017 process 15 out of 20
+Hello World from node compute017 process 16 out of 20
+Hello World from node compute017 process 18 out of 20
+Hello World from node compute017 process 19 out of 20
+Hello World from node compute017 process 10 out of 20
+Hello World from node compute017 process 12 out of 20
+Hello World from node compute017 process 11 out of 20
+Hello World from node compute017 process 13 out of 20
+Hello World from node compute017 process 17 out of 20
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As this is an MPI application, the output file is added to by each of the processes/tasks running on the requested nodes independently of one another (i.e. no process/task depends waits for any other process/task to output its line). As such, the output of this job probably won't be in sequential order - the messages appear in the order in which the processes/tasks run and print the text (which will appear to be almost arbitrary after the job has started).</p>
+</div>
+</details>
+<h2 id="cancelling-a-job">Cancelling a Job<a class="headerlink" href="#cancelling-a-job" title="Permanent link">&para;</a></h2>
+<p>You may realise after submitting a job that something is wrong with it, eg. you put it on the wrong queue, set the wrong number of cores, or otherwise misconfigured parameters, so you need to cancel the job. You can cancel a job using the <code>scancel</code> command, giving the job ID of the job you wish to cancel:</p>
+<div class="highlight"><pre><span></span><code>scancel &lt;jobID&gt;
+</code></pre></div>
+<details class="example"><summary>Example</summary><p>If we wanted to cancel the 'Hello World' job with ID 20220, we would run:</p>
+<div class="highlight"><pre><span></span><code>scancel 20220
+</code></pre></div>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can only cancel your own jobs. System administrators can cancel any job.</p>
+</div>
+<h2 id="more-information">More Information<a class="headerlink" href="#more-information" title="Permanent link">&para;</a></h2>
+<p>More information about the SLURM workload manager and SLURM commands can be found on the <a href="https://slurm.schedmd.com/">SLURM docs</a>, or in the relevant man pages (eg. <code>man sbatch</code>).</p>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 10, 2021</span>
+      
+        <br>Created: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 10, 2021</span> 
+      
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../software-environment/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Software Environment and Modules" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Software Environment and Modules
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../using-specialised-nodes/" class="md-footer__link md-footer__link--next" aria-label="Next: Using Specialised Nodes" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Using Specialised Nodes
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      
+    
+  </body>
+</html>

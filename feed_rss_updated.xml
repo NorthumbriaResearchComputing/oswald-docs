@@ -9,17 +9,16 @@
 
     
     
-    
     <docs>https://github.com/RSC-Northumbria/oswald-docs/</docs>
     <language>en</language>
 
     
-    <pubDate>Wed, 22 Sep 2021 10:33:47 -0000</pubDate>
-    <lastBuildDate>Wed, 22 Sep 2021 10:33:47 -0000</lastBuildDate>
+    <pubDate>Thu, 14 Oct 2021 11:23:21 -0000</pubDate>
+    <lastBuildDate>Thu, 14 Oct 2021 11:23:21 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
-    <generator>MkDocs RSS plugin - v0.18.0</generator>
+    <generator>MkDocs RSS plugin - v0.19.1</generator>
 
     
     
@@ -36,7 +35,10 @@
       <title>Sign Up</title>
       
       
-      <description>&lt;!-- Begin Mailchimp Signup Form --&gt;
+      
+      
+      <description>&lt;p&gt;Our newsletter is a roundup of the latest news, ideas, projects, and events from across the wider research computing community.&lt;/p&gt;
+&lt;!-- Begin Mailchimp Signup Form --&gt;
 &lt;p&gt;&lt;link href=&#34;https://cdn-images.mailchimp.com/embedcode/classic-10_7.css&#34; rel=&#34;stylesheet&#34; type=&#34;text/css&#34;&gt;&lt;/p&gt;
 &lt;style type=&#34;text/css&#34;&gt;
     #mc_embed_signup {
@@ -74,7 +76,7 @@
 &lt;/div&gt;
 &lt;!--End mc_embed_signup--&gt;</description>
       <link>https://rsc-northumbria.github.io/oswald-docs/newsletter/signup/</link>
-      <pubDate>Wed, 22 Sep 2021 09:20:01 -0000</pubDate>
+      <pubDate>Sun, 10 Oct 2021 15:48:09 -0000</pubDate>
       <source url="https://rsc-northumbria.github.io/oswald-docs/feed_rss_updated.xml">Northumbria University Research Computing Community</source>
       
       <guid isPermaLink="true">https://rsc-northumbria.github.io/oswald-docs/newsletter/signup/</guid>
@@ -83,6 +85,8 @@
     
     <item>
       <title>October</title>
+      
+      
       
       
       <description>&lt;h1&gt;HPC/RSE Newsletter - October 2021&lt;/h1&gt;
