@@ -820,10 +820,21 @@
         clear: left;
         font-size: 14px;
     }
-    /* Make sure the colours match properly (see mkdocs-material for theme colour vars) */
+    /* Use visible colours on light and dark backgrounds (it will have a border too) */
     #mc_embed_signup input {
-        background-color: var(--md-default-fg-color);
-        color: var(--md-default-bg-color);
+        background-color: #eee;
+        color: #000;
+    }
+    /* Behave like a link (see mkdocs-material for theme colour vars) */
+    #mc_embed_signup input[type="submit"] {
+        background-color: var(--md-primary-fg-color);
+        color: var(--md-primary-bg-color);
+    }
+    #mc_embed_signup input[type="submit"]:hover,
+    #mc_embed_signup input[type="submit"]:focus,
+    #mc_embed_signup input[type="submit"]:active {
+        background-color: var(--md-accent-fg-color);
+        color: var(--md-accent-bg-color);
     }
 </style>
 
@@ -858,7 +869,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 10, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 17, 2021</span>
       
         <br>Created: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 22, 2021</span> 
       
