@@ -1,3 +1,5 @@
+Our newsletter is a roundup of the latest news, ideas, projects, and events from across the wider research computing community.
+
 <!-- Begin Mailchimp Signup Form -->
 <link href="https://cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
 <style type="text/css">
@@ -5,10 +7,21 @@
 		clear: left;
 		font-size: 14px;
 	}
-	/* Make sure the colours match properly (see mkdocs-material for theme colour vars) */
+	/* Use visible colours on light and dark backgrounds (it will have a border too) */
 	#mc_embed_signup input {
-		background-color: var(--md-default-fg-color);
-		color: var(--md-default-bg-color);
+		background-color: #eee;
+		color: #000;
+	}
+	/* Behave like a link (see mkdocs-material for theme colour vars) */
+	#mc_embed_signup input[type="submit"] {
+		background-color: var(--md-primary-fg-color);
+		color: var(--md-primary-bg-color);
+	}
+	#mc_embed_signup input[type="submit"]:hover,
+	#mc_embed_signup input[type="submit"]:focus,
+	#mc_embed_signup input[type="submit"]:active {
+		background-color: var(--md-accent-fg-color);
+		color: var(--md-accent-bg-color);
 	}
 </style>
 

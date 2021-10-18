@@ -26,6 +26,8 @@ theme:
     repo: fontawesome/brands/github
 
   features:
+    - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.expand
 
   palette:
@@ -56,29 +58,32 @@ markdown_extensions:
 nav:
   - Home: index.md
 
-  - Oswald Quickstart:
-    - Accessing Oswald: quickstart/accessing-oswald.md
-    - Storage and Filesystems: quickstart/storage-and-filesystems.md
-    - Software Environment and Modules: quickstart/software-environment.md
-    - Running Jobs: quickstart/running-jobs.md
-    - Using Specialised Nodes: quickstart/using-specialised-nodes.md
-    - Application Development Tools: quickstart/application-development-tools.md
+  - Oswald Documentation:
+    - What is Oswald?: oswald/what-is-oswald.md
 
-  - Oswald Software:
-    - Software List: software/software-list.md
-    - MPI: software/mpi.md
-    - GNU Compilers: software/gnu-compilers.md
-    - Intel Compilers: software/intel-compilers.md
+    - Quickstart:
+      - Accessing Oswald: oswald/quickstart/accessing-oswald.md
+      - Storage and Filesystems: oswald/quickstart/storage-and-filesystems.md
+      - Software Environment and Modules: oswald/quickstart/software-environment.md
+      - Running Jobs: oswald/quickstart/running-jobs.md
+      - Using Specialised Nodes: oswald/quickstart/using-specialised-nodes.md
+      - Application Development Tools: oswald/quickstart/application-development-tools.md
 
-  - Oswald Support:
-    - University Support: support/university-support.md
-    - FAQs: support/faqs.md
-    - Known Issues: support/known-issues.md
-    
-  - Events: events/events.md
+    - Software:
+      - Software List: oswald/software/software-list.md
+      - MPI: oswald/software/mpi.md
+      - GNU Compilers: oswald/software/gnu-compilers.md
+      - Intel Compilers: oswald/software/intel-compilers.md
+
+    - Support:
+      - University Support: oswald/support/university-support.md
+      - FAQs: oswald/support/faqs.md
+      - Known Issues: oswald/support/known-issues.md
+
+  - Events:
+    - All Events: events/events.md
 
   - Newsletter:
     - Sign Up: newsletter/signup.md
     - 2021:
       - October: newsletter/2021-10.md
-
