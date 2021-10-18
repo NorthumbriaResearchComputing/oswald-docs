@@ -17,3 +17,6 @@ If you have any research computing-related news, ideas, projects, or events you 
 If you're hosting a research computing-related event, we would also like to hear about it. Please get in touch with ??? and we can add your event to our list.
 
 Also, if you find something incorrect, out of date or missing in this website, feel free to get in touch with ???. Or, if you have the time and skills to do so, you can even head over to [this website's GitHub repository](https://github.com/RSC-Northumbria/oswald-docs), make the edits yourself and create a Pull Request. We appreciate all contributions!
+
+??? todo
+    Add in the name(s) and email address(es) of one or more people willing to handle these kinds of requests.
