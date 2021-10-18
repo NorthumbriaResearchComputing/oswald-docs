@@ -1,8 +1,8 @@
 # Research Computing Events at Northumbria
 
-### Thursday 21st October - Northumbria Research Computing Launch event: 
+### Thursday 21st October - Northumbria Research Computing Launch event
 
-https://rsc-northumbria.github.io/RSC-Northumbria-launch/
+[https://rsc-northumbria.github.io/RSC-Northumbria-launch/](https://rsc-northumbria.github.io/RSC-Northumbria-launch/)
 
 This is your chance to meet other researchers from across Northumbria University who use and develop research software. 
 
