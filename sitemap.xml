@@ -21,67 +21,72 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsc-northumbria.github.io/oswald-docs/quickstart/accessing-oswald/</loc>
+         <loc>https://rsc-northumbria.github.io/oswald-docs/oswald/what-is-oswald/</loc>
          <lastmod>2021-10-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsc-northumbria.github.io/oswald-docs/quickstart/application-development-tools/</loc>
+         <loc>https://rsc-northumbria.github.io/oswald-docs/oswald/quickstart/accessing-oswald/</loc>
          <lastmod>2021-10-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsc-northumbria.github.io/oswald-docs/quickstart/running-jobs/</loc>
+         <loc>https://rsc-northumbria.github.io/oswald-docs/oswald/quickstart/application-development-tools/</loc>
          <lastmod>2021-10-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsc-northumbria.github.io/oswald-docs/quickstart/software-environment/</loc>
+         <loc>https://rsc-northumbria.github.io/oswald-docs/oswald/quickstart/running-jobs/</loc>
          <lastmod>2021-10-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsc-northumbria.github.io/oswald-docs/quickstart/storage-and-filesystems/</loc>
+         <loc>https://rsc-northumbria.github.io/oswald-docs/oswald/quickstart/software-environment/</loc>
          <lastmod>2021-10-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsc-northumbria.github.io/oswald-docs/quickstart/using-specialised-nodes/</loc>
+         <loc>https://rsc-northumbria.github.io/oswald-docs/oswald/quickstart/storage-and-filesystems/</loc>
          <lastmod>2021-10-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsc-northumbria.github.io/oswald-docs/software/gnu-compilers/</loc>
+         <loc>https://rsc-northumbria.github.io/oswald-docs/oswald/quickstart/using-specialised-nodes/</loc>
          <lastmod>2021-10-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsc-northumbria.github.io/oswald-docs/software/intel-compilers/</loc>
+         <loc>https://rsc-northumbria.github.io/oswald-docs/oswald/software/gnu-compilers/</loc>
          <lastmod>2021-10-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsc-northumbria.github.io/oswald-docs/software/mpi/</loc>
+         <loc>https://rsc-northumbria.github.io/oswald-docs/oswald/software/intel-compilers/</loc>
          <lastmod>2021-10-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsc-northumbria.github.io/oswald-docs/software/software-list/</loc>
+         <loc>https://rsc-northumbria.github.io/oswald-docs/oswald/software/mpi/</loc>
          <lastmod>2021-10-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsc-northumbria.github.io/oswald-docs/support/faqs/</loc>
+         <loc>https://rsc-northumbria.github.io/oswald-docs/oswald/software/software-list/</loc>
          <lastmod>2021-10-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsc-northumbria.github.io/oswald-docs/support/known-issues/</loc>
+         <loc>https://rsc-northumbria.github.io/oswald-docs/oswald/support/faqs/</loc>
          <lastmod>2021-10-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rsc-northumbria.github.io/oswald-docs/support/university-support/</loc>
+         <loc>https://rsc-northumbria.github.io/oswald-docs/oswald/support/known-issues/</loc>
+         <lastmod>2021-10-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rsc-northumbria.github.io/oswald-docs/oswald/support/university-support/</loc>
          <lastmod>2021-10-18</lastmod>
          <changefreq>daily</changefreq>
     </url>

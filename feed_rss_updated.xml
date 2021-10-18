@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Mon, 18 Oct 2021 09:02:44 -0000</pubDate>
-    <lastBuildDate>Mon, 18 Oct 2021 09:02:44 -0000</lastBuildDate>
+    <pubDate>Mon, 18 Oct 2021 10:29:03 -0000</pubDate>
+    <lastBuildDate>Mon, 18 Oct 2021 10:29:03 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -37,17 +37,29 @@
       
       
       
-      <description>&lt;!-- Begin Mailchimp Signup Form --&gt;
+      <description>&lt;p&gt;Our newsletter is a roundup of the latest news, ideas, projects, and events from across the wider research computing community.&lt;/p&gt;
+&lt;!-- Begin Mailchimp Signup Form --&gt;
 &lt;p&gt;&lt;link href=&#34;https://cdn-images.mailchimp.com/embedcode/classic-10_7.css&#34; rel=&#34;stylesheet&#34; type=&#34;text/css&#34;&gt;&lt;/p&gt;
 &lt;style type=&#34;text/css&#34;&gt;
     #mc_embed_signup {
         clear: left;
         font-size: 14px;
     }
-    /* Make sure the colours match properly (see mkdocs-material for theme colour vars) */
+    /* Use visible colours on light and dark backgrounds (it will have a border too) */
     #mc_embed_signup input {
-        background-color: var(--md-default-fg-color);
-        color: var(--md-default-bg-color);
+        background-color: #eee;
+        color: #000;
+    }
+    /* Behave like a link (see mkdocs-material for theme colour vars) */
+    #mc_embed_signup input[type=&#34;submit&#34;] {
+        background-color: var(--md-primary-fg-color);
+        color: var(--md-primary-bg-color);
+    }
+    #mc_embed_signup input[type=&#34;submit&#34;]:hover,
+    #mc_embed_signup input[type=&#34;submit&#34;]:focus,
+    #mc_embed_signup input[type=&#34;submit&#34;]:active {
+        background-color: var(--md-accent-fg-color);
+        color: var(--md-accent-bg-color);
     }
 &lt;/style&gt;
 
@@ -75,7 +87,7 @@
 &lt;/div&gt;
 &lt;!--End mc_embed_signup--&gt;</description>
       <link>https://rsc-northumbria.github.io/oswald-docs/newsletter/signup/</link>
-      <pubDate>Wed, 22 Sep 2021 09:20:01 -0000</pubDate>
+      <pubDate>Sun, 17 Oct 2021 13:47:57 -0000</pubDate>
       <source url="https://rsc-northumbria.github.io/oswald-docs/feed_rss_updated.xml">Northumbria University Research Computing Community</source>
       
       <guid isPermaLink="true">https://rsc-northumbria.github.io/oswald-docs/newsletter/signup/</guid>
