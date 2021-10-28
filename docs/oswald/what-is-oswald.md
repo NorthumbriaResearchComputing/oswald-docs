@@ -2,6 +2,8 @@
 
 Oswald is one of [Northumbria University's](https://www.northumbria.ac.uk) HPC clusters, which is available to Northumbria research staff in the Faculty of Engineering and Environment. Oswald is named after Oswald the King of Northumbria (c604-5 August 642).
 
+**If you use Oswald please acknowlege this in any publications that result with the following statement: "This work used the Oswald High Performance Computing facility operated by Northumbria University (UK)."**
+
 ## What is Supercomputing?
 
 Supercomputing is defined as the most powerful form of computing at the present time. Supercomputers are therefore the biggest, fastest computers that exist right now. The definition of 'supercomputer' changes over time as supercomputers get bigger and faster. As a rule of thumb, a supercomputer is at least 100 times as powerful as a PC.
