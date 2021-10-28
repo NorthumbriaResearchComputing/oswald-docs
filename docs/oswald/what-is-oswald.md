@@ -1,6 +1,6 @@
 # What is Oswald?
 
-Oswald is [Northumbria University's](https://www.northumbria.ac.uk) HPC cluster, which is available to Northumbria research staff. Oswald is named after Oswald the King of Northumbria (c604-5 August 642).
+Oswald is one of [Northumbria University's](https://www.northumbria.ac.uk) HPC clusters, which is available to Northumbria research staff in the Faculty of Engineering and Environment. Oswald is named after Oswald the King of Northumbria (c604-5 August 642).
 
 ## What is Supercomputing?
 
