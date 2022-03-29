@@ -1,6 +1,6 @@
 # Northumbria University Research Computing Community Website
 
-This is the website for the Northumbria University Research Computing Community. It is hosted at: https://rsc-northumbria.github.io/oswald-docs/.
+This is the website for the Northumbria University Research Computing Community. It is hosted at: https://northumbriaresearchcomputing.github.io/oswald-docs/.
 
 ## Building the Website Offline
 
